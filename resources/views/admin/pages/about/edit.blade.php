@@ -50,7 +50,7 @@
         
  
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary"> <span class="d-none"> loading ......</span> Submit</button>
+        <button type="submit" class="btn btn-primary"> <span class="d-none"> loading ......</span> Update</button>
       </div>
   </form>
 

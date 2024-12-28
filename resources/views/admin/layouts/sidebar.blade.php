@@ -6,8 +6,8 @@
         <div class="m-header">
             <a href="{{ route('admin.dashboard') }}" class="b-brand text-primary">
                 <!-- Change your logo from here -->
-                {{-- <img src="{{ url($setting->logo) }}" alt="logo image" class="logo-lg" style="max-width: 150px; max-height: 50px;"> --}}
-                <span class="badge bg-primary rounded-pill ms-2 theme-version">Matel Heart</span>
+                <img src="{{ url($setting->logo) }}" alt="logo image" class="logo-lg" style="max-width: 150px; max-height: 50px;">
+                <span class="badge bg-primary rounded-pill ms-2 theme-version">Jomijoma Limited</span>
             </a>
         </div>
 
@@ -40,6 +40,21 @@
                         <span class="pc-arrow"></span></a>
                 </li>
                 
+                      
+                <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-settings"></i></span>
+                            <span class="pc-mtext">Jomijoma History</span>
+                            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                    </a>
+
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link"
+                            href="{{route('about.index')}}">About us</a>
+                        </li>
+                  
+                    </ul>
+                </li>
                 
                 <li class="pc-item pc-hasmenu">
                     <a href="#!" class="pc-link">
@@ -66,6 +81,21 @@
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link"
                             href="{{route('rent.index')}}">Rent List</a>
+                        </li>
+                  
+                    </ul>
+                </li>
+
+                <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-settings"></i></span>
+                            <span class="pc-mtext">Letest News</span>
+                            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                    </a>
+
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link"
+                            href="{{route('news.index')}}">News</a>
                         </li>
                   
                     </ul>

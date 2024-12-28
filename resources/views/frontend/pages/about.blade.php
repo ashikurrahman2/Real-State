@@ -19,22 +19,20 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 who-1">
                 <div>
-                    <h2 class="text-left mb-4">About <span>Find Houses</span></h2>
+                    <h2 class="text-left mb-4">About <span>{{ $about->title }}</span></h2>
                 </div>
                 <div class="pftext">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id voluptatibus incidunt cum? Atque quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio rerum aperiam ratione, sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit sunt.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id voluptatibus incidunt cum? Atque quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio rerum aperiam ratione, sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit sunt.</p>
+                    <p>{{ $about->description }}</p>
                 </div>
                 <div class="box bg-2">
                     <a href="about.html" class="text-center button button--moema button--text-thick button--text-upper button--size-s">read More</a>
-                    <img src="{{ asset('/') }}frontend/assets/images/signature.png" class="ml-5" alt="">
+                    <img src="{{ asset($about->signature) }}" class="ml-5" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-xs-12">
                 <div class="wprt-image-video w50">
-                    <img alt="image" src="{{asset('/')}}frontend/assets/images/bg/bg-video.jpg">
-                    <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4">
+                    <img alt="image" src="{{asset($about->photo)}}">
+                    {{-- <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4"> --}}
                         <i class="fa fa-play"></i>
                     </a>
                     <div class="iq-waves">

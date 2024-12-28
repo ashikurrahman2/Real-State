@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\RentController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\AdminUserController;
@@ -33,6 +34,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     Route::resource('property',PropertyController::class);
     Route::resource('rent',RentController::class);
     Route::resource('about',AboutController::class);
+    Route::resource('news',NewsController::class);
    
 });
 

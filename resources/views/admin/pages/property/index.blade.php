@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title','Property')
 @section('admin_content')
 <div class="pc-container">
     <div class="pc-content">

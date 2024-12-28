@@ -75,7 +75,7 @@ class AboutController extends Controller
     {
         $request->validate([
             'title'       => 'required|string|max:255',
-            'photo'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'signature'   => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'description' => 'required|string',
         ]);
@@ -85,7 +85,7 @@ class AboutController extends Controller
                 'description' => strip_tags($request->description),
             ]);
         About::newAbout($request);
-        $this->toastr->Success('About created successfully!');
+        $this->toastr->success('About created successfully!');
         return back();
     }
 
@@ -175,7 +175,7 @@ if ($request->hasFile('signature')) {
         $about = About::findOrFail($id);
         $about->delete();
     
-        $this->toastr->Success('About Deleted successfully!');
+        $this->toastr->success('About Deleted successfully!');
         return back();
     }
 }
