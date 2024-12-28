@@ -23,24 +23,31 @@ class RentController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $rent= Rent::all();
+            $rent = Rent::all();
             return DataTables::of($rent)
-            ->addIndexColumn()
-            ->addColumn('action', function ($row) {
-                $actionbtn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm me-1 edit" data-id="' . $row->id . '" data-bs-toggle="modal" data-bs-target="#editModal">
-                                <i class="fa fa-edit"></i>
-                              </a>
-                                <button class="btn btn-danger btn-sm delete" data-id="' . $row->id . '">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            <form id="delete-form-' . $row->id . '" action="' . route('rent.destroy', $row->id) . '" method="POST" style="display: none;">
-                                ' . csrf_field() . '
-                                ' . method_field('DELETE') . '
-                            </form>';
-                return $actionbtn;
-            })
-            ->rawColumns(['action'])
-            ->make(true);
+                ->addIndexColumn()
+                ->addColumn('rent_image', function ($row) {
+                    if ($row->rent_image) {
+                        return '<img src="' . asset($row->rent_image) . '" alt="Rent Image" class="img-fluid center-image" style="max-width: 40px; display: block; margin: 0 auto;">';
+                    } else {
+                        return 'No image uploaded';
+                    }
+                })
+                ->addColumn('action', function ($row) {
+                    $actionbtn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm me-1 edit" data-id="' . $row->id . '" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    <i class="fa fa-edit"></i>
+                                  </a>
+                                  <button class="btn btn-danger btn-sm delete" data-id="' . $row->id . '">
+                                      <i class="fa fa-trash"></i>
+                                  </button>
+                                  <form id="delete-form-' . $row->id . '" action="' . route('rent.destroy', $row->id) . '" method="POST" style="display: none;">
+                                      ' . csrf_field() . '
+                                      ' . method_field('DELETE') . '
+                                  </form>';
+                    return $actionbtn;
+                })
+                ->rawColumns(['rent_image', 'action'])
+                ->make(true);
         }
         return view('admin.pages.rent.index');
     }
@@ -63,6 +70,7 @@ class RentController extends Controller
             'rentproperty_id'=>'required|string|max:500',
             'rentproperty_type'=> 'required|string|max:500',
             'rent_description'=> 'required|string|max:500',
+            'rent_image'=> 'required|string|max:600',
             'rentproperty_status'=> 'required|string|max:500',
             'rentproperty_price'=> 'required|string|max:500',
             'rent_rooms' => 'required|integer|max:255',
@@ -95,7 +103,7 @@ class RentController extends Controller
     public function edit(Rent $rent)
     {
         $rent = Rent::all();
-        return view('admin.pages.property.edit', compact('rent'));
+        return view('admin.pages.rent.edit', compact('rent'));
     }
 
     /**
@@ -108,6 +116,7 @@ class RentController extends Controller
             'rentproperty_id'=>'required|string|max:500',
             'rentproperty_type'=> 'required|string|max:500',
             'rent_description'=> 'required|string|max:500',
+            'rent_image'=> 'required|string|max:600',
             'rentproperty_status'=> 'required|string|max:500',
             'rentproperty_price'=> 'required|string|max:500',
             'rent_rooms' => 'required|integer|max:255',

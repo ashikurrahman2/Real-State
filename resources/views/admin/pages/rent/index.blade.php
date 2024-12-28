@@ -37,6 +37,7 @@
                       <th>Rentproperty ID</th>
                       <th>Rentproperty Type</th>
                       <th>Rentproperty Description</th>
+                      <th>Rentproperty Image</th>
                       <th>Rentproperty Status</th>
                       <th>Rentproperty Price</th>
                       <th>Rent Rooms</th>
@@ -56,6 +57,7 @@
                         <th>Rentproperty ID</th>
                         <th>Rentproperty Type</th>
                         <th>Rentproperty Description</th>
+                        <th>Rentproperty Image</th>
                         <th>Rentproperty Status</th>
                         <th>Rentproperty Price</th>
                         <th>Rent Rooms</th>
@@ -84,7 +86,7 @@
                 <h5 class="modal-title h4" id="myLargeModalLabel">Add New Rent</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{route('rent.store')}}" method="post" id="add-form">
+            <form action="{{route('rent.store')}}" method="post" id="add-form" enctype="multipart/form-data">
               @csrf
               <div class="modal-body">
                 <div class="form-group">
@@ -105,6 +107,12 @@
                         <textarea class="form-control textarea" name="rent_description" id="summernote" rows="4" >{{old('rent_description')}}</textarea> 
                     </div>
                 </div>
+
+                <div class="col-md-12">
+                  <label for="rent_image" class="col-form-label pt-0">Rentproperty Image<sup class="text-size-20 top-1">*</sup></label>
+                  <input type="file" class="dropify" data-height="200" name="rent_image"  required />
+                  <small id="imageHelp" class="form-text text-muted">This is your Rent image</small>
+              </div>
 
                   <div class="form-group">
                     <label for="rentproperty_status" class="col-form-label pt-0">Rentproperty Status<sup class="text-size-20 top-1">*</sup></label>
@@ -184,6 +192,7 @@
                 { data: 'rentproperty_id', name: 'rentproperty_id' },
                 { data: 'rentproperty_type', name: 'rentproperty_type' },
                 { data: 'rent_description', name: 'rent_description' },
+                { data: 'rent_image', name: 'rent_image' },
                 { data: 'rentproperty_status', name: 'rentproperty_status' },
                 { data: 'rentproperty_price', name: 'rentproperty_price' },
                 { data: 'rent_rooms', name: 'rent_rooms' },

@@ -1,4 +1,4 @@
-<form action="{{ route('rent.update', $rent->id) }}" method="POST">
+<form action="{{ route('rent.update', $rent->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-group">
@@ -19,6 +19,22 @@
               <textarea class="form-control textarea" name="rent_description" id="summernote" rows="4" >{{ $rent->rent_description }}</textarea> 
           </div>
       </div>
+
+      <div class="form-group">
+        <label for="rent_image" class="col-form-label pt-0">Current Rent Image</label>
+        <br>
+        @if($rent->rent_image)
+        <img src="{{ asset($rent->rent_image) }}" alt="rent image" class="img-fluid" style="max-width: 100px;">
+        @else
+        <p>No logo uploaded.</p>
+        @endif
+    </div>
+
+    <div class="col-md-12">
+      <label for="rent_image" class="col-form-label pt-0">Rentproperty Image<sup class="text-size-20 top-1">*</sup></label>
+      <input type="file" class="dropify" data-height="200" name="rent_image" />
+      <small id="imageHelp" class="form-text text-muted">Current Image: <img src="{{ asset($rent->rent_image) }}" class="img-fluid" style="max-width: 100px;"></small>
+  </div>
 
         <div class="form-group">
           <label for="rentproperty_status" class="col-form-label pt-0">Rentproperty Status<sup class="text-size-20 top-1">*</sup></label>
@@ -65,4 +81,7 @@
         <button type="submit" class="btn btn-primary">Update</button>
     </div>
   </form>
+  {{-- For file upload script --}}
+  <script src="{{ asset('/') }}admin/assets/fileuploads/js/fileupload.js"></script>
+  <script src="{{ asset('/') }}admin/assets/fileuploads/js/file-upload.js"></script>
   
