@@ -59,8 +59,8 @@ public static function updateNews($request, $id)
  $news = self::findOrFail($id);
 
     if ($request->file('news_image')) {
-        if (file_exists($news->property_image)) {
-            unlink($news->property_image);
+        if (file_exists($news->news_image)) {
+            unlink($news->news_image);
         }
         self::$imageUrl = self::getImageUrl($request);
     } else {

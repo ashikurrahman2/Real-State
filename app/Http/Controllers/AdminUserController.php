@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests; // for get permissions
-use Flasher\Prime\FlasherInterface;
+use Flasher\Toastr\Prime\ToastrInterface;
 use Illuminate\Http\Request;
 use app\Models\Admin;
 use Spatie\Permission\Models\Role;
@@ -13,17 +13,30 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminUserController extends BaseController
 {
-    protected $flasher;
 
-    public function __construct(FlasherInterface $flasher)
+
+    protected $toastr;
+
+    public function __construct(ToastrInterface $toastr)
     {
-        $this->flasher = $flasher;
+        $this->toastr = $toastr;
 
         $this->middleware('permission:view user')->only(['index']);
         $this->middleware('permission:create user')->only(['create','store']);
         $this->middleware('permission:update user')->only(['edit','update']);
         $this->middleware('permission:delete user')->only(['destroy']);
     }
+    // protected $flasher;
+
+    // public function __construct(FlasherInterface $flasher)
+    // {
+    //     $this->flasher = $flasher;
+
+    //     $this->middleware('permission:view user')->only(['index']);
+    //     $this->middleware('permission:create user')->only(['create','store']);
+    //     $this->middleware('permission:update user')->only(['edit','update']);
+    //     $this->middleware('permission:delete user')->only(['destroy']);
+    // }
     public function index(){
         $users = Admin::all();
     return view('admin.role-permission.user.index', compact('users'));
@@ -63,7 +76,7 @@ class AdminUserController extends BaseController
         $user->syncRoles($request->roles); // Pass role names, not IDs
     
         // Redirect with success message
-        $this->flasher->addSuccess('User created successfully!');
+        $this->toastr->success('User created successfully!');
         return redirect()->route('users.index');
     }
     
@@ -102,7 +115,7 @@ class AdminUserController extends BaseController
         $user->syncRoles($request->roles);
     
         // Redirect with a success message
-        $this->flasher->addSuccess('User updated successfully!');
+        $this->toastr->success('User updated successfully!');
         return redirect()->route('users.index');
     }
 
@@ -115,7 +128,7 @@ class AdminUserController extends BaseController
         $user->delete();
     
         // Redirect with a success message
-        $this->flasher->addSuccess('User deleted successfully!');
+        $this->toastr->success('User deleted successfully!');
         return redirect()->route('users.index');
     }
 

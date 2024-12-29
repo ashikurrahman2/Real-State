@@ -10,7 +10,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-sm-auto">
                         <div class="page-header-title">
-                            <h5 class="mb-0">Property</h5>
+                            <h5 class="mb-0">News</h5>
                         </div>
                     </div>
                     <div class="col-sm-auto">
@@ -28,7 +28,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header table-card-header">
-              <h5>All Property list here</h5>
+              <h5>All News list here</h5>
             </div>
             <div class="card-body">
               <div class="dt-responsive table-responsive">
