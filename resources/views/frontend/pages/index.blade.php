@@ -176,106 +176,35 @@
         <div class="container-fluid">
             <div class="sec-title">
                 <h2><span>Latest </span>News</h2>
-                <p>The latest news form real estate.</p>
+                <p>The latest news from real estate.</p>
             </div>
             <div class="news-wrap">
                 <div class="row">
+                    @foreach($newses as $news)
                     <div class="col-xl-6 col-md-12 col-xs-12" data-aos="fade-right">
                         <div class="news-item news-item-sm">
                             <a href="blog-details.html" class="news-img-link">
                                 <div class="news-item-img">
-                                    <img class="resp-img" src="{{asset('/')}}frontend/assets/images/blog/b-1.jpg" alt="blog image">
+                                    <img class="resp-img" src="{{ asset($news->news_image) }}" alt="blog image">
                                 </div>
                             </a>
                             <div class="news-item-text">
-                                <a href="blog-details.html"><h3>The Real Estate News</h3></a>
-                                <span class="date">Jun 23, 2020 &nbsp;/&nbsp; By Admin</span>
+                                <a href="blog-details.html">
+                                    <h3>{{ $news->news_title }}</h3>
+                                </a>
+                                <span class="date">{{ $news->created_at->format('M d, Y') }} &nbsp;/&nbsp; By {{ $news->news_via }}</span>
                                 <div class="news-item-descr">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                                </div>
-                                <div class="news-item-bottom">
-                                    <a href="blog-details.html" class="news-link">Read more...</a>
-                                    <ul class="action-list">
-                                        <li class="action-item"><i class="fa fa-heart"></i> <span>306</span></li>
-                                        <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                        <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news-item news-item-sm min-last">
-                            <a href="blog-details.html" class="news-img-link">
-                                <div class="news-item-img">
-                                    <img class="resp-img" src="{{asset('/')}}frontend/assets/images/blog/b-2.jpg" alt="blog image">
-                                </div>
-                            </a>
-                            <div class="news-item-text">
-                                <a href="blog-details.html"><h3>The Real Estate News</h3></a>
-                                <span class="date">Jun 23, 2020 &nbsp;/&nbsp; By Admin</span>
-                                <div class="news-item-descr">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                                </div>
-                                <div class="news-item-bottom">
-                                    <a href="blog-details.html" class="news-link">Read more...</a>
-                                    <ul class="action-list">
-                                        <li class="action-item"><i class="fa fa-heart"></i> <span>306</span></li>
-                                        <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                        <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                    </ul>
+                                    <p>{{ $news->news_description }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-md-12 col-xs-12" data-aos="fade-left">
-                        <div class="news-item news-item-sm">
-                            <a href="blog-details.html" class="news-img-link">
-                                <div class="news-item-img">
-                                    <img class="resp-img" src="{{asset('/')}}frontend/assets/images/blog/b-3.jpg" alt="blog image">
-                                </div>
-                            </a>
-                            <div class="news-item-text">
-                                <a href="blog-details.html"><h3>The Real Estate News</h3></a>
-                                <span class="date">Jun 23, 2020 &nbsp;/&nbsp; By Admin</span>
-                                <div class="news-item-descr">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                                </div>
-                                <div class="news-item-bottom">
-                                    <a href="blog-details.html" class="news-link">Read more...</a>
-                                    <ul class="action-list">
-                                        <li class="action-item"><i class="fa fa-heart"></i> <span>306</span></li>
-                                        <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                        <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news-item news-item-sm last">
-                            <a href="blog-details.html" class="news-img-link">
-                                <div class="news-item-img">
-                                    <img class="resp-img" src="{{asset('/')}}frontend/assets/images/blog/b-4.jpg" alt="blog image">
-                                </div>
-                            </a>
-                            <div class="news-item-text">
-                                <a href="blog-details.html"><h3>The Real Estate News</h3></a>
-                                <span class="date">Jun 23, 2020 &nbsp;/&nbsp; By Admin</span>
-                                <div class="news-item-descr">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                                </div>
-                                <div class="news-item-bottom">
-                                    <a href="blog-details.html" class="news-link">Read more...</a>
-                                    <ul class="action-list">
-                                        <li class="action-item"><i class="fa fa-heart"></i> <span>306</span></li>
-                                        <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                        <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+    
     <!-- END SECTION BLOG -->
 
     <!-- START SECTION AGENTS -->
@@ -288,26 +217,30 @@
             <div class="row team-all">
                 <!--Team Block-->
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="150">
+                    @foreach ($agents as $agent)
+                        
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="{{asset('/')}}frontend/assets/images/team/t-5.jpg" alt="" /></a>
+                            <a href="agents-listing-grid.html">
+                                <img src="{{asset($agent->agent_image)}}" alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="{{ $agent->agent_face }}" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                    {{-- <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li> --}}
+                                    {{-- <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li> --}}
+                                    <li><a href="{{ $agent->agent_linked }}" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="lower-box">
-                            <h3><a href="agents-listing-grid.html">Carls Jhons</a></h3>
-                            <div class="designation">Real Estate Agent</div>
+                            <h3><a href="agents-listing-grid.html">{{ $agent->agent_name }}</a></h3>
+                            <div class="designation">{{ $agent->agent_designation }}</div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!--Team Block-->
-                <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="250">
+                {{-- <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="250">
                     <div class="inner-box team-details">
                         <div class="image team-head">
                             <a href="agents-listing-grid.html"><img src="{{asset('/')}}frontend/assets/images/team/t-6.jpg" alt="" /></a>
@@ -325,9 +258,9 @@
                             <div class="designation">Real Estate Agent</div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!--Team Block-->
-                <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="350">
+                {{-- <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="350">
                     <div class="inner-box team-details">
                         <div class="image team-head">
                             <a href="agents-listing-grid.html"><img src="{{asset('/')}}frontend/assets/images/team/t-7.jpg" alt="" /></a>
@@ -345,9 +278,9 @@
                             <div class="designation">Real Estate Agent</div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!--Team Block-->
-                <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" data-aos="fade-up" data-aos-delay="450">
+                {{-- <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" data-aos="fade-up" data-aos-delay="450">
                     <div class="inner-box team-details">
                         <div class="image team-head">
                             <a href="agents-listing-grid.html"><img src="{{asset('/')}}frontend/assets/images/team/t-8.jpg" alt="" /></a>
@@ -365,8 +298,8 @@
                             <div class="designation">Real Estate Agent</div>
                         </div>
                     </div>
-                </div>
-                <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" data-aos="fade-up" data-aos-delay="550">
+                </div> --}}
+                {{-- <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" data-aos="fade-up" data-aos-delay="550">
                     <div class="inner-box team-details">
                         <div class="image team-head">
                             <a href="agents-listing-grid.html"><img src="{{asset('/')}}frontend/assets/images/team/team-image-2.jpg" alt="" /></a>
@@ -384,8 +317,8 @@
                             <div class="designation">Real Estate Agent</div>
                         </div>
                     </div>
-                </div>
-                <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" data-aos="fade-up" data-aos-delay="650">
+                </div> --}}
+                {{-- <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" data-aos="fade-up" data-aos-delay="650">
                     <div class="inner-box team-details">
                         <div class="image team-head">
                             <a href="agents-listing-grid.html"><img src="{{asset('/')}}frontend/assets/images/team/team-image-7.jpg" alt="" /></a>
@@ -403,7 +336,7 @@
                             <div class="designation">Real Estate Agent</div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

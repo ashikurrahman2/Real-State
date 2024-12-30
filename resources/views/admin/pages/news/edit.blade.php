@@ -9,7 +9,7 @@
       </div>
 
       <div class="form-group">
-        <label for="rent_image" class="col-form-label pt-0">Current news Image</label>
+        <label for="news_image" class="col-form-label pt-0">Current news Image</label>
         <br>
         @if($news->news_image)
         <img src="{{ asset($news->news_image) }}" alt="rent image" class="img-fluid" style="max-width: 100px;">

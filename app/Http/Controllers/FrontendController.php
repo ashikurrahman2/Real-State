@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Property;
 use App\Models\Rent;
 use App\Models\About;
+use App\Models\Agent;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -13,8 +15,10 @@ class FrontendController extends Controller
     {
         $properties = Property::all();
         $abouts = About::get();
+        $newses = News::all();
+        $agents = Agent::all();
         $rents = Rent::all();
-        return view('frontend.pages.index', compact('properties', 'rents', 'abouts'));   
+        return view('frontend.pages.index', compact('properties', 'rents', 'abouts','newses','agents'));   
     }
 
 
