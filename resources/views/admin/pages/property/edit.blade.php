@@ -7,6 +7,13 @@
           <small id="emailHelp" class="form-text text-muted">This is your property</small>
       </div>
 
+      <div class="col-md-12">
+        <div class="mb-3">
+            <label class="form-label">Property Description</label>
+            <textarea class="form-control textarea" name="property_description" id="summernote" rows="4" >{{ $property->property_description }}</textarea> 
+        </div>
+    </div>
+
       <div class="form-group">
         <label for="property_image" class="col-form-label pt-0">Current property Logo</label>
         <br>
@@ -43,7 +50,7 @@
 
         <div class="form-group">
           <label for="property_sqrt" class="col-form-label pt-0">Property Sqrt<sup class="text-size-20 top-1">*</sup></label>
-            <input type="text" class="form-control" id="property_sqrt" name="property_sqrt" {{ $property->property_sqrt }} required>
+            <input type="text" class="form-control" id="property_sqrt" name="property_sqrt"value="{{ $property->property_sqrt }}" required>
             <small id="emailHelp" class="form-text text-muted">This is character. If you want type number</small>
         </div>
 

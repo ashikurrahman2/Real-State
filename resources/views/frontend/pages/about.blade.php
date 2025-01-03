@@ -6,8 +6,8 @@
 <section class="headings">
     <div class="text-heading text-center">
         <div class="container">
-            <h1>About Our Company</h1>
-            <h2><a href="/">Home </a> &nbsp;/&nbsp; About Us</h2>
+            <h1 class="pt-4">আমাদের সম্পর্কে</h1>
+            {{-- <h2><a href="/">Home </a> &nbsp;/&nbsp; About Us</h2> --}}
         </div>
     </div>
 </section>
@@ -17,16 +17,19 @@
 <section class="about-us fh">
     <div class="container">
         <div class="row">
+            @foreach($abouts as $about)
             <div class="col-lg-6 col-md-12 who-1">
                 <div>
-                    <h2 class="text-left mb-4">About <span>{{ $about->title }}</span></h2>
+                    <h2 class="text-left mb-4">আমাদের সম্পর্কে <span>{{ $about->title }}</span></h2>
                 </div>
                 <div class="pftext">
                     <p>{{ $about->description }}</p>
                 </div>
                 <div class="box bg-2">
-                    <a href="about.html" class="text-center button button--moema button--text-thick button--text-upper button--size-s">read More</a>
-                    <img src="{{ asset($about->signature) }}" class="ml-5" alt="">
+                    {{-- <a href="about.html" class="text-center button button--moema button--text-thick button--text-upper button--size-s">read More</a> --}}
+                    <a href="about.html" class="text-center button button--moema button--text-thick button--text-upper button--size-s" style="margin-top: -10px;">read More</a>
+
+                    <img src="{{ asset($about->signature) }}" class="ml-5" alt=""style="width: 60px; height: auto;">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-xs-12">
@@ -43,6 +46,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 <!-- END SECTION ABOUT -->

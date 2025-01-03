@@ -55,6 +55,21 @@
                   
                     </ul>
                 </li>
+
+                <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-settings"></i></span>
+                            <span class="pc-mtext">Land</span>
+                            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                    </a>
+
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link"
+                            href="{{route('land.index')}}">Land category</a>
+                        </li>
+                  
+                    </ul>
+                </li>
                 
                 <li class="pc-item pc-hasmenu">
                     <a href="#!" class="pc-link">

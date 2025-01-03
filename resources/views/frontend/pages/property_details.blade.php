@@ -8,15 +8,17 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 blog-pots">
                     <div class="row">
+                        @foreach ($properties as $property)
+                            
                         <div class="col-md-12">
                             <section class="headings-2 pt-0">
                                 <div class="pro-wrapper">
                                     <div class="detail-wrapper-body">
                                         <div class="listing-title-bar">
-                                            <h3>Luxury Villa House <span class="mrg-l-5 category-tag">For Sale</span></h3>
+                                            <h3>{{ $property->property_title }} <span class="mrg-l-5 category-tag">{{ $property->property_action }}</span></h3>
                                             <div class="mt-0">
                                                 <a href="#listing-location" class="listing-address">
-                                                    <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>77 - Central Park South, NYC
+                                                    <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>{{ $property->property_address }}
                                                 </a>
                                             </div>
                                         </div>
@@ -24,10 +26,10 @@
                                     <div class="single detail-wrapper mr-2">
                                         <div class="detail-wrapper-body">
                                             <div class="listing-title-bar">
-                                                <h4>$ 230,000</h4>
+                                                <h4>৳ {{ $property->property_amount }}</h4>
                                                 <div class="mt-0">
                                                     <a href="#listing-location" class="listing-address">
-                                                        <p>$ 1,200 / sq ft</p>
+                                                        <p>৳ {{ $property->property_sqrt }} / sq ft</p>
                                                     </a>
                                                 </div>
                                             </div>
@@ -37,10 +39,10 @@
                             </section>
                             <!-- main slider carousel items -->
                             <div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
-                                <h5 class="mb-4">Gallery</h5>
+                                <h5 class="mb-4">গ্যালারি</h5>
                                 <div class="carousel-inner">
                                     <div class="active item carousel-item" data-slide-number="0">
-                                        <img src="{{ asset('/') }}frontend/assets/images/single-property/s-1.jpg" class="img-fluid" alt="slider-listing">
+                                        <img src="{{ asset($property->property_image) }}" class="img-fluid" alt="slider-listing">
                                     </div>
                                     <div class="item carousel-item" data-slide-number="1">
                                         <img src="{{ asset('/') }}frontend/assets/images/single-property/s-2.jpg" class="img-fluid" alt="slider-listing">
@@ -63,7 +65,7 @@
                                 <ul class="carousel-indicators smail-listing list-inline">
                                     <li class="list-inline-item active">
                                         <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
-                                            <img src="{{ asset('/') }}frontend/assets/images/single-property/s-1.jpg" class="img-fluid" alt="listing-small">
+                                            <img src="{{ asset($property->property_image) }}" class="img-fluid" alt="listing-small">
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
@@ -90,16 +92,17 @@
                                 <!-- main slider carousel items -->
                             </div>
                             <div class="blog-info details mb-30">
-                                <h5 class="mb-4">Description</h5>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
+                                <h5 class="mb-4">সম্পত্তির বিবরণ</h5>
+                                <p class="mb-3">{{ $property->property_description }}</p>
+                                {{-- <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p> --}}
+                                {{-- <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p> --}}
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="single homes-content details mb-30">
                         <!-- title -->
-                        <h5 class="mb-4">Property Details</h5>
+                        <h5 class="mb-4">সম্পত্তির বিস্তারিত</h5>
                         <ul class="homes-list clearfix">
                             <li>
                                 <span class="font-weight-bold mr-1">Property ID:</span>
@@ -111,11 +114,11 @@
                             </li>
                             <li>
                                 <span class="font-weight-bold mr-1">Property status:</span>
-                                <span class="det">For Sale</span>
+                                <span class="det">{{ $property->property_action }}</span>
                             </li>
                             <li>
                                 <span class="font-weight-bold mr-1">Property Price:</span>
-                                <span class="det">$230,000</span>
+                                <span class="det">৳ {{ $property->property_amount }} </span>
                             </li>
                             <li>
                                 <span class="font-weight-bold mr-1">Rooms:</span>
@@ -123,11 +126,11 @@
                             </li>
                             <li>
                                 <span class="font-weight-bold mr-1">Bedrooms:</span>
-                                <span class="det">7</span>
+                                <span class="det">{{ $property->property_elements }}</span>
                             </li>
                             <li>
                                 <span class="font-weight-bold mr-1">Bath:</span>
-                                <span class="det">4</span>
+                                <span class="det">{{ $property->property_bath }}</span>
                             </li>
                             <li>
                                 <span class="font-weight-bold mr-1">Garages:</span>

@@ -5,52 +5,58 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="netabout">
-                        <a href="index.html" class="logo">
-                            <img src="images/logo-footer.svg" alt="netcom">
+                        @foreach($abouts as $about)
+                        <a href="/" class="logo">
+                            <img src="{{ asset('/') }}frontend/assets/images/logo-footer.svg" alt="netcom">
                         </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
+                        <p>{{ $about->description }}</p>
                     </div>
+                    @endforeach
                     <div class="contactus">
+                        {{-- @foreach($settings as $setting) --}}
                         <ul>
                             <li>
                                 <div class="info">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <p class="in-p">95 South Park Avenue, USA</p>
+                                    <p class="in-p">{{ $setting->address }}</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="info">
                                     <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <p class="in-p">+456 875 369 208</p>
+                                    <p class="in-p">+{{ $setting->phone_one }}</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="info">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <p class="in-p ti">support@findhouses.com</p>
+                                    <p class="in-p ti">{{ $setting->main_email }}</p>
                                 </div>
+                                {{-- @endforeach --}}
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="navigation">
-                        <h3>Navigation</h3>
+                        <h3>নেভিগেশন</h3>
                         <div class="nav-footer">
                             <ul>
-                                <li><a href="index.html">Home One</a></li>
-                                <li><a href="properties-right-sidebar.html">Properties Right</a></li>
-                                <li><a href="properties-full-list.html">Properties List</a></li>
-                                <li><a href="properties-details.html">Property Details</a></li>
-                                <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li>
+                                <li><a href="/">হোম</a></li>
+                                <li><a href="{{ route('about') }}">আমাদের সম্পর্কে</a></li>
+                                <li><a href="{{ route('propertylist') }}">সম্পত্তির তালিকা</a></li>
+                                <li><a href="{{ route('property') }}">বিস্তারিত সম্পত্তি</a></li>
+                                <li><a href="#">চাকুরি</a></li>
+                                <li><a href="{{ route('contact') }}">যোগাযোগ</a></li>
+                                {{-- <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li> --}}
                             </ul>
-                            <ul class="nav-right">
+                            {{-- <ul class="nav-right">
                                 <li><a href="agent-details.html">Agents Details</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="blog.html">Blog Default</a></li>
                                 <li><a href="blog-details.html">Blog Details</a></li>
                                 <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -92,8 +98,8 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="newsletters">
-                        <h3>Newsletters</h3>
-                        <p>Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.</p>
+                        <h3>নিউজলেটার</h3>
+                        <p>সর্বশেষ আপডেট এবং অফার পেতে আমাদের নিউজলেটার জন্য সাইন আপ করুন. আপনার ইনবক্সে খবর পেতে সাবস্ক্রাইব করুন।</p>
                     </div>
                     <form class="bloq-email mailchimp form-inline" method="post">
                         <label for="subscribeEmail" class="error"></label>

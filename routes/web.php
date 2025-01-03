@@ -12,8 +12,10 @@ Route::get('/', [FrontendController:: class, 'index'])->name('index');
 Route::get('/about', [FrontendController:: class, 'About'])->name('about');
 Route::get('/property-details', [FrontendController:: class, 'Pdetails'])->name('property');
 Route::get('/property-list', [FrontendController:: class, 'Plist'])->name('propertylist');
-Route::get('/login', [FrontendController:: class, 'Ulogin'])->name('login');
 Route::get('/contact', [FrontendController:: class, 'Communication'])->name('contact');
+Route::get('/colabration', [FrontendController:: class, 'partnerDetails'])->name('colabration');
+Route::get('/career-form', [FrontendController:: class, 'Career'])->name('carrerForm');
+Route::get('/job-form', [FrontendController:: class, 'JobApplication'])->name('jobsForm');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +31,4 @@ require __DIR__.'/auth.php';
 
 require __DIR__.'/admin-auth.php';
 require __DIR__.'/admin-dashboard.php';
+require __DIR__.'/user.php';

@@ -204,16 +204,19 @@
                 </div>
             </section>
             <div class="row featured portfolio-items">
+                @foreach ($properties as $property)
                 <div class="item col-lg-4 col-md-12 col-xs-12 landscapes sale pr-0 pb-0" data-aos="fade-up">
                     <div class="project-single mb-0 bb-0">
                         <div class="project-inner project-head">
                             <div class="homes">
                                 <!-- homes img -->
-                                <a href="single-property-1.html" class="homes-img">
+                                <a href="{{ route('property') }}" class="homes-img">
                                     <div class="homes-tag button alt featured">Featured</div>
-                                    <div class="homes-tag button alt sale">For Sale</div>
-                                    <div class="homes-price">$9,000/mo</div>
-                                    <img src="{{ asset('/') }}frontend/assets/images/blog/b-11.jpg" alt="home-1" class="img-responsive">
+                                    <div class="homes-tag button alt sale">{{ $property->property_action }}</div>
+                                    <div class="homes-price">৳{{ $property->property_amount }}/mo</div>
+                                    <img src="{{ asset($property->property_image) }}" alt="home-1" class="img-responsive">
+                                
+                                    {{-- <img src="{{ asset('/') }}frontend/assets/images/blog/b-11.jpg" alt="home-1" class="img-responsive"> --}}
                                 </a>
                             </div>
                             <div class="button-effect">
@@ -227,29 +230,29 @@
                 <!-- homes content -->
                 <div class="col-lg-8 col-md-12 homes-content pb-0 mb-44" data-aos="fade-up">
                     <!-- homes address -->
-                    <h3><a href="single-property-1.html">Real House Luxury Villa</a></h3>
+                    <h3><a href="single-property-1.html">{{ $property->property_title }}</a></h3>
                     <p class="homes-address mb-3">
                         <a href="single-property-1.html">
-                            <i class="fa fa-map-marker"></i><span>Est St, 77 - Central Park South, NYC</span>
+                            <i class="fa fa-map-marker"></i><span>{{ $property->property_address }}</span>
                         </a>
                     </p>
                     <!-- homes List -->
                     <ul class="homes-list clearfix pb-3">
                         <li class="the-icons">
                             <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                            <span>6 Bedrooms</span>
+                            <span>{{ $property->property_elements }} Bedrooms</span>
                         </li>
                         <li class="the-icons">
                             <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
-                            <span>3 Bathrooms</span>
+                            <span>{{ $property->property_bath }} Bathrooms</span>
                         </li>
                         <li class="the-icons">
                             <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                            <span>720 sq ft</span>
+                            <span>{{ $property->property_sqrt }} sq ft</span>
                         </li>
                         <li class="the-icons">
                             <i class="flaticon-car mr-2" aria-hidden="true"></i>
-                            <span>2 Garages</span>
+                            <span>6 Garages</span>
                         </li>
                     </ul>
                     <div class="footer">
@@ -262,6 +265,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
             <nav aria-label="..." class="pt-0">
                 <ul class="pagination lis-view mt-10">
                     <li class="page-item disabled">

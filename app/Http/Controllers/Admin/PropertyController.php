@@ -75,6 +75,7 @@ class PropertyController extends Controller
         $request->validate([
 
             'property_title' => 'required|string|max:500',
+            'property_description' => 'required|string|max:500',
             'property_address' => 'required|string|max:500',
             'property_elements' => 'required|string|max:500',
             'property_bath' => 'required|numeric|max:500',
@@ -83,10 +84,15 @@ class PropertyController extends Controller
             'property_amount' => 'required|string|max:255',
             'property_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+           //  Remove HTML tag
+           $request->merge([
+            'property_description' => strip_tags($request->property_description),
+        ]);
         
         Property::newProperty($request);
         // $this->toastr->success('Property info Inserted successfully!');
-        $this->toastr->addSuccess('Property created successfully!');
+        $this->toastr->success('Property created successfully!');
 
            // Flash a success message
     // $flasher->addSuccess('Property info inserted successfully!');
@@ -118,6 +124,7 @@ class PropertyController extends Controller
         // Validate the incoming request
         $validated = $request->validate([
             'property_title' => 'required|string|max:500',
+            'property_description' => 'required|string|max:500',
             'property_address' => 'required|string|max:500',
             'property_elements' => 'required|string|max:500',
             'property_bath' => 'required|numeric|max:500',
@@ -147,6 +154,7 @@ class PropertyController extends Controller
         // Update the rest of the fields
         $property->update([
             'property_title' => $validated['property_title'],
+            'property_description' => $validated['property_description'],
             'property_address' => $validated['property_address'],
             'property_elements' => $validated['property_elements'],
             'property_bath' => $validated['property_bath'],
@@ -156,10 +164,7 @@ class PropertyController extends Controller
         ]);
 
         // Success message
-        // toastr()->success('Property updated successfully!');
-            // Flash a success message
-    // $flasher->addSuccess('Property updated successfully!');
-    $this->toastr->addSuccess('Property updated successfully!');
+    $this->toastr->success('Property updated successfully!');
 
         // Redirect back to the index page
         return back();
@@ -175,7 +180,7 @@ class PropertyController extends Controller
         // $this->toastr->success('Property info deleted successfully!');
             // Flash a success message
     // $flasher->addSuccess('Property info deleted successfully!');
-    $this->toastr->addSuccess('Property Deleted successfully!');
+    $this->toastr->success('Property Deleted successfully!');
         return back();
     }
 }

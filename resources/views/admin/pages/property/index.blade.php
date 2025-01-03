@@ -36,6 +36,7 @@
                     <tr>
                       <th>SL</th>
                         <th>Property Title</th>
+                        <th>Property Description</th>
                         <th>Property Image</th>
                         <th>Property Address</th>
                         <th>Property Bed</th>
@@ -53,6 +54,7 @@
                     <tr>
                         <th>SL</th>
                         <th>Property Title</th>
+                        <th>Property Description</th>
                         <th>Property Image</th>
                         <th>Property Address</th>
                         <th>Property Bed</th>
@@ -89,6 +91,14 @@
                     <input type="text" class="form-control" id="property_title" name="property_title" required>
                     <small id="emailHelp" class="form-text text-muted">This is your property</small>
                 </div>
+
+                
+              <div class="col-md-12">
+                <div class="mb-3">
+                    <label class="form-label">Property Description</label>
+                    <textarea class="form-control textarea" name="property_description" id="summernote" rows="4" >{{old('	property_description')}}</textarea> 
+                </div>
+            </div>
           
                 <div class="col-md-12">
                   <label for="property_image" class="col-form-label pt-0">Property Image<sup class="text-size-20 top-1">*</sup></label>
@@ -110,7 +120,7 @@
 
                   <div class="form-group">
                     <label for="property_bath" class="col-form-label pt-0">Property Bath<sup class="text-size-20 top-1">*</sup></label>
-                      <input type="number" class="form-control" id="property_bath" name="property_bath" required>
+                      <input type="text" class="form-control" id="property_bath" name="property_bath" required>
                       <small id="emailHelp" class="form-text text-muted">Must be type number</small>
                   </div>
 
@@ -170,6 +180,7 @@
             columns: [
                 { data: 'DT_RowIndex', name: 'DT_RowIndex' },
                 { data: 'property_title', name: 'property_title' },
+                { data: 'property_description', name: 'property_description' },
                 { data: 'property_image', name: 'property_image' },
                 { data: 'property_address', name: 'property_address' },
                 { data: 'property_elements', name: 'property_elements' },
@@ -189,7 +200,19 @@
         });
     });
 
-  //dropify image
+      // Summernote script
+      $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 200,
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    // Strip HTML tags for plain text
+                    let textOnly = $('<div>').html(contents).text();
+                    $('#summernote').val(textOnly);
+                }
+            }
+        });
+    });
  
   </script>
   

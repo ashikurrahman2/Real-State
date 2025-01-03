@@ -15,7 +15,7 @@ class SmtpController extends Controller
     protected $toastr;
     public function __construct(ToastrInterface $toastr)
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->toastr = $toastr;
     }
     public function index()

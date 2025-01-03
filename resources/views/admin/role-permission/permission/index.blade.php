@@ -62,13 +62,17 @@
                                     </div>
                                     <div class="d-flex">
                                         <!-- Edit Button -->
+                                        @can('update user')
                                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm me-1">
                                             <i class="fa fa-edit"></i>
                                         </a>
+                                        @endcan
                                         <!-- Delete Button -->
+                                        @can('delete user')
                                         <button class="btn btn-danger btn-sm delete" data-id="{{ $loop->iteration }}">
                                             <i class="fa fa-trash"></i>
                                         </button>
+                                        @endcan
                                         <!-- Delete Form -->
                                         <form id="delete-form-{{ $loop->iteration }}" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
                                             @csrf
@@ -164,12 +168,16 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $permission->name }}</td>
                                         <td class="d-flex">
+                                            @can('update permission')
                                             <a href="{{ route('permissions.edit', $permission->id) }}" class="btn btn-primary btn-sm me-1 edit">
                                                 <i class="fa fa-edit"></i>
                                             </a>
+                                            @endcan
+                                            @can('delete permission')
                                             <button class="btn btn-danger btn-sm delete" data-id="{{ $loop->iteration }}">
                                                 <i class="fa fa-trash"></i>
                                             </button>
+                                            @endcan
                                             <form id="delete-form-{{ $loop->iteration }}" action="{{ route('permissions.destroy', $permission->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

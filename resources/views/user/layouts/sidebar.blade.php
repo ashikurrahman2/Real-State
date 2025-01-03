@@ -15,7 +15,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="user-profile.html">
+                                        <a href="{{ route('profile') }}">
                                             <i class="fa fa-user"></i>Profile
                                         </a>
                                     </li>

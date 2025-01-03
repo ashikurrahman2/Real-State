@@ -10,26 +10,27 @@
                     <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6 p-0" data-aos="fade-up" data-aos-delay="150">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-fb7756"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/1.png" width="50" alt=""></div>
-                            <h3 class="mt-0" _ngcontent-bgi-c3="">Buy Property</h3>
-                            <p _ngcontent-bgi-c3="">Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">Read More</a></div>
+                            <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি কিনুন</h3>
+                            <p _ngcontent-bgi-c3="">সম্পত্তি কেনা একটি মূল্যবান বিনিয়োগ, যা দীর্ঘমেয়াদে নিরাপত্তা এবং আর্থিক বৃদ্ধি প্রদান করতে পারে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
                     </div>
                     <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="250">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-facd60"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/2.png" width="50" alt=""></div>
-                            <h3 class="mt-0" _ngcontent-bgi-c3="">Rent Property</h3>
-                            <p _ngcontent-bgi-c3="">Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">Read More</a></div>
+                            <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি ভাড়া</h3>
+                            <p _ngcontent-bgi-c3="">সম্পত্তি ভাড়া নেওয়া একটি স্বল্পমেয়াদী সমাধান, যা আর্থিকভাবে সহজতর এবং অস্থায়ী সুবিধা প্রদান করে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
                     </div>
-                    <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="350">
+                    {{-- <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="350">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-1ac0c6"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/3.png" width="50" alt=""></div>
                             <h3 class="mt-0" _ngcontent-bgi-c3="">Real Estate Kit</h3>
                             <p _ngcontent-bgi-c3="">Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">Read More</a></div>
-                    </div>
+                    </div> --}}
                     <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="450">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/4.png" width="65" alt=""></div>
-                            <h3 class="mt-0" _ngcontent-bgi-c3="">Sell Property</h3>
-                            <p _ngcontent-bgi-c3="">Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">Read More</a></div>
+                            <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি বিক্রি</h3>
+                            <p _ngcontent-bgi-c3="">সম্পত্তি বিক্রি একটি গুরুত্বপূর্ণ সিদ্ধান্ত, যা লাভ অর্জন বা নতুন বিনিয়োগের সুযোগ তৈরি করে।
+                         </p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
                     </div>
                 </div>
             </div>
@@ -41,8 +42,8 @@
     <section class="featured portfolio bg-white-1 rec-pro">
         <div class="container-fluid">
             <div class="sec-title">
-                <h2><span>Properties for </span>Sale</h2>
-                <p>We provide full service at every step.</p>
+                <h2><span>সম্পত্তি বিক্রয়ের </span>জন্য</h2>
+                <p>আমরা প্রতিটি পদক্ষেপে সম্পূর্ণ পরিষেবা প্রদান করি।</p>
             </div>
             <div class="portfolio col-xl-12">
                 <div class="slick-lancers">
@@ -79,15 +80,15 @@
                                     <ul class="homes-list clearfix">
                                         <li>
                                             <i class="fa fa-bed" aria-hidden="true"></i>
-                                            <span>{{ $property->property_elements }} Beds</span>
+                                            <span>{{ $property->property_elements }} বেড</span>
                                         </li>
                                         <li>
                                             <i class="fa fa-bath" aria-hidden="true"></i>
-                                            <span>{{ $property->property_bath }} Baths</span>
+                                            <span>{{ $property->property_bath }} বাথ</span>
                                         </li>
                                         <li>
                                             <i class="fa fa-object-group" aria-hidden="true"></i>
-                                            <span>{{ $property->property_sqrt }} sq ft</span>
+                                            <span>{{ $property->property_sqrt }} স্কয়ার ফিট</span>
                                         </li>
                                     </ul>
                                     <div class="price-properties footer pt-3 pb-0">
@@ -123,10 +124,10 @@
             <div class="row info-head">
                 <div class="col-lg-6 col-md-8 col-xs-8" data-aos="fade-right">
                     <div class="info-text mt-5">
-                        <h3>Special Offers Every Day.</h3>
-                        <p>We Help you find the best places and offer near you. Bring to the table win-win survival strategies to ensure proactive domination going forward.</p>
+                        <h3>প্রতিদিন বিশেষ অফার।</h3>
+                        <p>আমরা আপনাকে আপনার কাছাকাছি সেরা জায়গা এবং অফার খুঁজে পেতে সাহায্য করি। সামনে এগিয়ে যাওয়া সক্রিয় আধিপত্য নিশ্চিত করতে জয়-জয় বেঁচে থাকার কৌশলগুলিকে টেবিলে আনুন।</p>
                         <div class="inf-btn pro">
-                            <a href="contact-us.html" class="btn btn-pro btn-secondary btn-lg">Get Started</a>
+                            <a href="contact-us.html" class="btn btn-pro btn-secondary btn-lg">শুরু করুন</a>
                         </div>
                     </div>
                 </div>
@@ -140,8 +141,8 @@
     <section class="recently portfolio bg-white-1 rec-pro ho-17">
         <div class="container-fluid">
             <div class="sec-title">
-                <h2><span>Properties for </span>Rent</h2>
-                <p>We provide full service at every step.</p>
+                <h2><span>সম্পত্তি ভাড়ার </span>জন্য</h2>
+                <p>আমরা প্রতিটি পদক্ষেপে সম্পূর্ণ পরিষেবা প্রদান করি।</p>
             </div>
             <div class="row portfolio-items">
                 <div class="item col-lg-4 col-md-6 col-xs-12 landscapes sale" data-aos="zoom-in" data-aos-delay="150">
@@ -175,8 +176,8 @@
     <section class="blog-section bg-white rec-pro">
         <div class="container-fluid">
             <div class="sec-title">
-                <h2><span>Latest </span>News</h2>
-                <p>The latest news from real estate.</p>
+                <h2><span>সর্বশেষ </span>খবর</h2>
+                <p>ভূমি সম্পত্তি থেকে সর্বশেষ খবর.</p>
             </div>
             <div class="news-wrap">
                 <div class="row">
@@ -211,8 +212,8 @@
     <section class="team bg-white-1 rec-pro">
         <div class="container-fluid">
             <div class="sec-title">
-                <h2><span>Meet Our </span>Agents</h2>
-                <p>Our Agents are here to help you</p>
+                <h2><span>আমাদের এজেন্টদের সাথে </span>দেখা করুন</h2>
+                <p>আমাদের এজেন্ট আপনাকে সাহায্য করতে এখানে আছে</p>
             </div>
             <div class="row team-all">
                 <!--Team Block-->
@@ -343,7 +344,7 @@
     <!-- END SECTION AGENTS -->
 
     <!-- STAR SECTION PARTNERS -->
-    <div class="partners bg-white rec-pro">
+    {{-- <div class="partners bg-white rec-pro">
         <div class="container-fluid">
             <div class="sec-title">
                 <h2><span>Our </span>Partners</h2>
@@ -362,11 +363,37 @@
                 <div class="owl-item" data-aos="fade-up"><img src="{{asset('/')}}frontend/assets/images/partners/13.jpg" alt=""></div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- END SECTION PARTNERS -->
+    <!-- STAR SECTION PARTNERS -->
+<div class="partners bg-white rec-pro">
+    <div class="container-fluid">
+        <div class="sec-title">
+            <h2><span>আমাদের </span>পার্টনার</h2>
+            <p>যে কোম্পানিগুলো আমাদের প্রতিনিধিত্ব করে।</p>
+        </div>
+        <div class="row">
+            @foreach($partners as $partner)
+            <div class="col-md-3 mb-4">
+                <div class="partner-item text-center" data-aos="fade-up">
+                    <a href="{{ route('colabration') }}">
+                    <img src="{{ asset($partner->partner_logo) }}" alt="Partner" class="img-fluid" style="height: 80px; width: 100px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center mt-4">
+            {{ $partners->links('pagination::bootstrap-5') }}
+        </div>
+    </div>
+</div>
+<!-- END SECTION PARTNERS -->
+
 
     <!-- START SECTION TOP LOCATION -->
-    <section class="top-location py-0">
+    {{-- <section class="top-location py-0">
         <h4>POPULAR PLACES</h4>
         <div class="owl-carousel owl-theme" id="tp-carousel">
             <div class="item" data-aos="zoom-in">
@@ -434,7 +461,7 @@
                 <img src="{{asset('/')}}frontend/assets/images/blog/b-8.jpg" alt="">
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- END SECTION TOP LOCATION -->
 
 @endsection

@@ -17,6 +17,7 @@ class Property extends Model
     protected $fillable = [
         'property_image',
         'property_title',
+        'property_description',
         'property_address',
         'property_elements',
         'property_bath',
@@ -78,6 +79,7 @@ public static function updateProperty($request, $id)
    {
        $property->property_image           = $imageUrl;
        $property->property_title           = $request->property_title;
+       $property->property_description     = $request->property_description;
        $property->property_address        = $request->property_address;
        $property->property_elements       = $request->property_elements;
        $property->property_bath           = $request->property_bath;
