@@ -61,11 +61,54 @@
                             <h4>Profile Details</h4>
                         </div>
                         <div class="sidebar-widget author-widget2">
+                            {{-- <div class="author-box clearfix">
+                                <img src="{{ asset('/') }}frontend/assets/images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
+                                <h4 class="author__title">Lisa Clark</h4>
+                                <p class="author__meta">Agent of Property</p>
+                            </div> --}}
                             <div class="author-box clearfix">
-                                <img src="images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
+                                <div class="image-wrapper">
+                                    <img src="{{ asset('/') }}frontend/assets/images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
+                                    <a href="#" class="edit-icon">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </div>
+
+                                <style>
+                                     .image-wrapper {
+                                     position: relative;
+                                     display: inline-block;
+                                    } 
+
+                                    .image-wrapper img {
+                                            display: block;
+                                        width: 100%; 
+                                    }
+
+
+                                    .edit-icon {
+                                        position: absolute;
+                                        top: 10px;
+                                        right: 10px;
+                                        background-color: rgba(0, 0, 0, 0.6);
+                                        color: #fff;
+                                        padding: 5px 8px;
+                                        border-radius: 50%;
+                                        font-size: 16px;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: background-color 0.3s ease;
+                                    }
+
+                                    .edit-icon:hover {
+                                     background-color: #007bff;
+                                }
+
+                                </style>
                                 <h4 class="author__title">Lisa Clark</h4>
                                 <p class="author__meta">Agent of Property</p>
                             </div>
+                            
                             <ul class="author__contact">
                                 <li><span class="la la-map-marker"><i class="fa fa-map-marker"></i></span>302 Av Park, New York</li>
                                 <li><span class="la la-phone"><i class="fa fa-phone" aria-hidden="true"></i></span><a href="#">(234) 0200 17813</a></li>

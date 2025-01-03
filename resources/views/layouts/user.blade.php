@@ -6,7 +6,7 @@
 <head>
     @include('user.layouts.meta')
     <!-- [style] -->
-    <title>Find Houses </title>
+    <title>Jomijoma Limited | @yield('title') </title>
     @include('user.layouts.style')
     <!-- FAVICON -->
 </head>

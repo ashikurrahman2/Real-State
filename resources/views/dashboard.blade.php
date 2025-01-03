@@ -1,6 +1,5 @@
-
 @extends('layouts.user')
-
+@section('title', 'Dashboard')
 @section('user_content')
 <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
                        <div class="col-lg-12 mobile-dashbord dashbord">
@@ -49,7 +48,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="index.html">
+                                            <a href="{{ route('logout') }}">
                                                 <i class="fas fa-sign-out-alt mr-3"></i>Log Out
                                             </a>
                                         </li>
@@ -178,7 +177,7 @@
                                     </div>
                                     <div class="message">
                                         <div class="thumb">
-                                            <img class="img-fluid" src="frontend/assets/images/testimonials/ts-2.jpg" alt="">
+                                            <img class="img-fluid" src="{{ asset('/') }}frontend/assets/images/testimonials/ts-2.jpg" alt="">
                                         </div>
                                         <div class="body">
                                             <h6>Karl Tyron</h6>
