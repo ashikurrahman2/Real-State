@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Flasher\Prime\FlasherInterface;
+use Flasher\Toastr\Prime\ToastrInterface;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
-    protected $flasher;
+    protected $toastr;
 
-    public function __construct(FlasherInterface $flasher)
+    public function __construct(ToastrInterface $toastr)
     {
-        $this->flasher = $flasher;
+        $this->toastr = $toastr;
     }
     public function index(){
         $roles = Role::all();
@@ -48,7 +48,7 @@ class UserController extends Controller
     ]);
 
     Role::create(['name' => $request->name]);
-    $this->flasher->addSuccess( 'Role created successfully!');
+    $this->toastr->success( 'Role created successfully!');
     return redirect()->route('roles.index');
 }
 
@@ -65,7 +65,7 @@ class UserController extends Controller
 
         $role = Role::findOrFail($id);
         $role->update(['name' => $request->name]);
-        $this->flasher->addSuccess('Role updated successfully!');
+        $this->toastr->success('Role updated successfully!');
         return redirect()->route('roles.index');
         // return redirect()->route('roles.index')->with('success', 'Permission updated successfully!');
     }
@@ -74,7 +74,7 @@ class UserController extends Controller
     {
         $role = Role::findOrFail($id);
         $role->delete();
-        $this->flasher->addSuccess('Role deleted successfully!');
+        $this->toastr->success('Role deleted successfully!');
         return redirect()->route('roles.index');
     }
     public function addPermissionToRole($id){
@@ -90,7 +90,7 @@ class UserController extends Controller
         $role = Role::findOrFail($id);
         $role->syncPermissions($request->permissions);
         return view('admin.role-permission.role.add-permissions', compact('role','permissions'));
-        $this->flasher->addSuccess('Permissions added to role successfully!');
+        $this->toastr->success('Permissions added to role successfully!');
         return redirect()->back();
     }
      

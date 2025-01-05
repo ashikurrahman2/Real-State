@@ -65,14 +65,23 @@
             <!-- Right Side Content / End -->
             <div class="header-user-menu user-menu add">
                 <div class="header-user-name">
-                    <span><img src="{{asset('/')}}frontend/assets/images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
+                    <span><img src="{{asset('/')}}frontend/assets/images/testimonials/ts-1.jpg" alt=""></span>{{ Auth::user()->name }}
                 </div>
                 <ul>
-                    <li><a href="user-profile.html">প্রোফাইল</a></li>
+                    <li><a href="{{ route('profile') }}">প্রোফাইল</a></li>
                     <li><a href="add-property.html">সম্পত্তি যোগ করুন</a></li>
                     <li><a href="payment-method.html">পেমেন্ট</a></li>
                     <li><a href="change-password.html">পাসওয়ার্ড চেঞ্জ</a></li>
-                    <li><a href="#">লগআউট</a></li>
+
+                        <li>
+                                    <a href="{{ route('logout') }}" 
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                       Log Out
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                 </ul>
             </div>
             <!-- Right Side Content / End -->

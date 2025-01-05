@@ -66,6 +66,16 @@
                                 <h4 class="author__title">Lisa Clark</h4>
                                 <p class="author__meta">Agent of Property</p>
                             </div> --}}
+
+                            {{-- <form action="{{ route('profile.update.image') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div>
+                                    <label for="user_image">Upload Profile Image:</label>
+                                    <input type="file" name="user_image" id="user_image">
+                                </div>
+                                <button type="submit">Update Profile Image</button>
+                            </form> --}}
+                            
                             <div class="author-box clearfix">
                                 <div class="image-wrapper">
                                     <img src="{{ asset('/') }}frontend/assets/images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
@@ -105,7 +115,8 @@
                                 }
 
                                 </style>
-                                <h4 class="author__title">Lisa Clark</h4>
+                                {{-- <h4 class="author__title">Lisa Clark</h4> --}}
+                                <h4 class="author__title">{{ Auth::user()->name }}</h4>
                                 <p class="author__meta">Agent of Property</p>
                             </div>
                             
@@ -114,7 +125,7 @@
                                 <li><span class="la la-phone"><i class="fa fa-phone" aria-hidden="true"></i></span><a href="#">(234) 0200 17813</a></li>
                                 <li><span class="la la-envelope-o"><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">lisa@gmail.com</a></li>
                             </ul>
-                            <div class="agent-contact-form-sidebar">
+                            {{-- <div class="agent-contact-form-sidebar">
                                 <h4>Request Inquiry</h4>
                                 <form name="contact_form" method="post" action="https://code-theme.com/html/findhouses/functions.php">
                                     <input type="text" id="fname" name="full_name" placeholder="Full Name" required="">
@@ -123,7 +134,7 @@
                                     <textarea placeholder="Message" name="message" required=""></textarea>
                                     <input type="submit" name="sendmessage" class="multiple-send-message" value="Submit Request">
                                 </form>
-                            </div>
+                            </div> --}}
                         </div>
                     
 

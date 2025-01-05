@@ -6,7 +6,7 @@
                         <div class="left-side">
                             <!-- Logo -->
                             <div id="logo">
-                                <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                                <a href="/"><img src="{{ asset('/') }}frontend/assets/images/logo.svg" alt=""></a>
                             </div>
                             <!-- Mobile Navigation -->
                             <div class="mmenu-trigger">
@@ -19,8 +19,8 @@
                             <!-- Main Navigation -->
                             <nav id="navigation" class="style-1">
                                 <ul id="responsive">
-                                <li><a href="#">Home</a>
-                                    <ul>
+                                <li><a href="/">হোম</a>
+                                    {{-- <ul>
                                         <li><a href="#">Home Map</a>
                                             <ul>
                                                 <li><a href="index-9.html">Home Map Style 1</a></li>
@@ -65,10 +65,10 @@
                                                     <li><a href="index-14.html">Home Style White</a></li>
                                                 </ul>
                                             </li>
-                                    </ul>
+                                    </ul> --}}
                                     </li>
-                                    <li><a href="#">Listing</a>
-                                        <ul>
+                                    <li><a href="#">আমাদের সম্পর্কে</a>
+                                        {{-- <ul>
                                             <li><a href="#">Listing Grid</a>
                                                 <ul>
                                                     <li><a href="properties-grid-1.html">Grid View 1</a></li>
@@ -113,7 +113,7 @@
                                                     <li><a href="agencies-details.html">Agencies Details</a></li>
                                                 </ul>
                                             </li>
-                                        </ul>
+                                        </ul> --}}
                                     </li>
                                     <li><a href="#">Property</a>
                                         <ul>
@@ -189,15 +189,15 @@
                         <!-- Right Side Content / --> 
                         <div class="header-user-menu user-menu">
                             <div class="header-user-name">
-                                <span><img src="frontend/assets/images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
+                                <span><img src="{{ Auth::user()->user_image ? asset('storage/' . Auth::user()->user_image) : asset('frontend/assets/images/testimonials/ts-1.jpg') }}" alt="{{ Auth::user()->name }}"></span>{{ Auth::user()->name }}
                             </div>
                             <ul>
-                                <li><a href="{{ route('profile') }}"> Edit profile</a></li>
+                                <li><a href="{{ route('profile') }}">প্রোফাইল</a></li>
                                 <li><a href="add-property.html"> Add Property</a></li>
                                 <li><a href="payment-method.html">  Payments</a></li>
                                 <li><a href="change-password.html"> Change Password</a></li>
                                 <li>
-                                    <a href="#" 
+                                    <a href="{{ route('logout') }}" 
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                        Log Out
                                     </a>

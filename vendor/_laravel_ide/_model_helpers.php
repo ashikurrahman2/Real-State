@@ -2555,12 +2555,14 @@ namespace App\Models {
      * @property hashed $password
      * @property \Illuminate\Support\Carbon|null $email_verified_at
      * @property string $email
+     * @property string|null $user_image
      * @property string $name
      * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
      * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|User whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|User whereUserImage($value)
      * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
      * @method static \Illuminate\Database\Eloquent\Builder|User whereEmailVerifiedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)

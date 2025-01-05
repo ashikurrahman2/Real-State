@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+// use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -57,4 +58,28 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+
+// public function updateProfileImage(Request $request): RedirectResponse
+// {
+//     $request->validate([
+//         'user_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+//     ]);
+
+//     $user = Auth::user();
+
+//     if ($request->hasFile('user_image')) {
+//         // পুরানো ইমেজ ডিলিট করুন
+//         if ($user->user_image && Storage::exists('public/' . $user->user_image)) {
+//             Storage::delete('public/' . $user->user_image);
+//         }
+
+//         // নতুন ইমেজ আপলোড করুন
+//         $path = $request->file('user_image')->store('users', 'public');
+//         $user->user_image = $path;
+//         $user->save();
+//     }
+//     // $abouts = About::get();
+//     return Redirect::route('profile.edit')->with('status', 'profile-image-updated');
+// }
 }
