@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6931d37642c197233db22de851ae7aa",
+    "content-hash": "d10ab2655ba4e3a45efae28c92d29eb3",
     "packages": [
         {
             "name": "brick/math",
@@ -3500,6 +3500,57 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "sandofvega/bdgeocode",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sandofvega/laravel-bangladesh-geocode.git",
+                "reference": "7fa0c14f8f027892114c1b6a7eaaf0f9b6106c7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sandofvega/laravel-bangladesh-geocode/zipball/7fa0c14f8f027892114c1b6a7eaaf0f9b6106c7c",
+                "reference": "7fa0c14f8f027892114c1b6a7eaaf0f9b6106c7c",
+                "shasum": ""
+            },
+            "type": "laravel",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sandofvega\\Bdgeocode\\BdgeocodeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sandofvega\\Bdgeocode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sand Of Vega",
+                    "email": "yasin@sandofvega.com",
+                    "homepage": "https://sandofvega.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Division, District, Upazila and Union level fully mapped Database.",
+            "keywords": [
+                "bangladesh",
+                "geocode",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/sandofvega/laravel-bangladesh-geocode/issues",
+                "source": "https://github.com/sandofvega/laravel-bangladesh-geocode/tree/master"
+            },
+            "time": "2018-09-10T09:01:38+00:00"
         },
         {
             "name": "spatie/laravel-permission",

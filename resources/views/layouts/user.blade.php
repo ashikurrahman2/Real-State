@@ -9,6 +9,8 @@
     <title>Jomijoma Limited | @yield('title') </title>
     @include('user.layouts.style')
     <!-- FAVICON -->
+
+   
 </head>
 
 <body class="maxw1600 m0a dashboard-bd">

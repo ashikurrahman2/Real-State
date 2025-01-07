@@ -189,7 +189,7 @@
                         <!-- Right Side Content / --> 
                         <div class="header-user-menu user-menu">
                             <div class="header-user-name">
-                                <span><img src="{{ Auth::user()->user_image ? asset('storage/' . Auth::user()->user_image) : asset('frontend/assets/images/testimonials/ts-1.jpg') }}" alt="{{ Auth::user()->name }}"></span>{{ Auth::user()->name }}
+                                {{-- <span><img src="{{ Auth::user()->user_image ? asset('storage/' . Auth::user()->user_image) : asset('frontend/assets/images/testimonials/ts-1.jpg') }}" alt="{{ Auth::user()->name }}"></span>{{ Auth::user()->name }} --}}
                             </div>
                             <ul>
                                 <li><a href="{{ route('profile') }}">প্রোফাইল</a></li>

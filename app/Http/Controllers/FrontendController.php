@@ -71,4 +71,9 @@ class FrontendController extends Controller
         return view('frontend.pages.job_application', compact('abouts'));
     }
 
+    public function Rent(){
+        $abouts = About::get();
+        return view('frontend.pages.rent_property', compact('abouts'));
+    }
+
 }

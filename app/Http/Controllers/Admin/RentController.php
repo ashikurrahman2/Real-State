@@ -77,7 +77,7 @@ class RentController extends Controller
             'bed_rooms' => 'required|integer|max:255',
             'bath_rooms' => 'required|integer|max:255',
             'garages' => 'required|integer|max:255',
-            'build_up' => 'required|date',
+            'build_up' => 'required|string',
         ]);
          //  Remove HTML tag
              $request->merge([

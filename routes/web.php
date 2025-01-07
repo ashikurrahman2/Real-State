@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\User\SellController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -16,6 +17,9 @@ Route::get('/contact', [FrontendController:: class, 'Communication'])->name('con
 Route::get('/colabration', [FrontendController:: class, 'partnerDetails'])->name('colabration');
 Route::get('/career-form', [FrontendController:: class, 'Career'])->name('carrerForm');
 Route::get('/job-form', [FrontendController:: class, 'JobApplication'])->name('jobsForm');
+Route::get('/rent-property', [FrontendController:: class, 'Rent'])->name('rentproperty');
+Route::post('/sell', [SellController::class, 'store'])->middleware('auth')->name('sell');
+Route::get('/sell', [SellController::class, 'store'])->middleware('auth')->name('sell');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

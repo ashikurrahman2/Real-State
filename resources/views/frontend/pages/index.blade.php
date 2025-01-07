@@ -7,32 +7,36 @@
         <div _ngcontent-bgi-c3="" class="container">
             <div _ngcontent-bgi-c3="" class="featured-boxes-inner">
                 <div _ngcontent-bgi-c3="" class="row m-0">
-                    <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6 p-0" data-aos="fade-up" data-aos-delay="150">
+                    <div _ngcontent-bgi-c3="" class="col-xl-4 col-sm-6 col-lg-6 p-0" data-aos="fade-up" data-aos-delay="150">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-fb7756"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/1.png" width="50" alt=""></div>
-                            <a href="#" class="link-class">
-                            <h3 class="mt-0" _ngcontent-bgi-c3="#">সম্পত্তি কিনুন</h3>
-                            </a>
-                            <p _ngcontent-bgi-c3="">সম্পত্তি কেনা একটি মূল্যবান বিনিয়োগ, যা দীর্ঘমেয়াদে নিরাপত্তা এবং আর্থিক বৃদ্ধি প্রদান করতে পারে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html"></a></div>
+                            <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি কিনুন</h3>
+                            <p _ngcontent-bgi-c3="">সম্পত্তি কেনা একটি মূল্যবান বিনিয়োগ, যা দীর্ঘমেয়াদে নিরাপত্তা এবং আর্থিক বৃদ্ধি প্রদান করতে পারে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
                     </div>
-                    <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="250">
+                    <div _ngcontent-bgi-c3="" class="col-xl-4 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="250">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-facd60"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/2.png" width="50" alt=""></div>
                             <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি ভাড়া</h3>
                             <p _ngcontent-bgi-c3="">সম্পত্তি ভাড়া নেওয়া একটি স্বল্পমেয়াদী সমাধান, যা আর্থিকভাবে সহজতর এবং অস্থায়ী সুবিধা প্রদান করে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
                     </div>
-                    {{-- <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="350">
-                        <div _ngcontent-bgi-c3="" class="single-featured-box">
-                            <div _ngcontent-bgi-c3="" class="icon color-1ac0c6"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/3.png" width="50" alt=""></div>
-                            <h3 class="mt-0" _ngcontent-bgi-c3="">Real Estate Kit</h3>
-                            <p _ngcontent-bgi-c3="">Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">Read More</a></div>
-                    </div> --}}
-                    <div _ngcontent-bgi-c3="" class="col-xl-3 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="450">
+                   <div _ngcontent-bgi-c3="" class="col-xl-4 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="450">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/4.png" width="65" alt=""></div>
-                            <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি বিক্রি</h3>
-                            <p _ngcontent-bgi-c3="">সম্পত্তি বিক্রি একটি গুরুত্বপূর্ণ সিদ্ধান্ত, যা লাভ অর্জন বা নতুন বিনিয়োগের সুযোগ তৈরি করে।
-                         </p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
+                               
+                                @if(auth()->check())
+                                    <a href="#" class="link-class" data-bs-toggle="modal" data-bs-target="#propertyModal">
+                                        <h3 class="mt-0">সম্পত্তি বিক্রি</h3>
+                                    </a>
+                                @else
+                                    <a href="{{ route('login') }}" class="link-class">
+                                        <h3 class="mt-0">সম্পত্তি বিক্রি</h3>
+                                    </a>
+                                @endif
+
+                                <p _ngcontent-bgi-c3="">সম্পত্তি বিক্রি একটি গুরুত্বপূর্ণ সিদ্ধান্ত, যা লাভ অর্জন বা নতুন বিনিয়োগের সুযোগ তৈরি করে।
+                                </p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html"></a></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,6 +124,110 @@
     </section>
     <!-- END SECTION PROPERTIES FOR SALE -->
 
+<!-- Modal -->
+<!-- Display Flash Messages -->
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @elseif (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+   <!-- বিক্রয় ফর্ম মডাল -->
+<div class="modal fade" id="propertyModal" tabindex="-1" aria-labelledby="propertyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="propertyModalLabel">বিক্রয় ফর্ম</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="বন্ধ করুন"></button>
+            </div>
+            <div class="modal-body">
+                <form id="propertyForm" action="{{ route('sell') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <!-- ফর্ম ক্ষেত্র -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">শিরোনাম</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="শিরোনাম লিখুন" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">বিবরণ</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="বিবরণ লিখুন" required></textarea>
+                    </div>
+
+                    <!-- দুই-কলামের লেআউট -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="address" class="form-label">ঠিকানা</label>
+                                <input type="text" class="form-control" id="address" name="address" placeholder="ঠিকানা লিখুন" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="zilla" class="form-label">জেলা</label>
+                                <input type="text" class="form-control" id="zilla" name="zilla" placeholder="জেলার নাম লিখুন" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="bds" class="form-label">BDS/RSCS</label>
+                                <input type="text" class="form-control" id="bds" name="bds" placeholder="BDS/RSCS লিখুন">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="morrja" class="form-label">মৌজা</label>
+                                <input type="text" class="form-control" id="morrja" name="morrja" placeholder="মৌজা লিখুন">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="category" class="form-label">জমির ধরন</label>
+                            <div class="mb-3">
+                                <select class="form-select" id="category" name="category" required>
+                                    <option value="residential">আবাসিক</option>
+                                    <option value="commercial">বাণিজ্যিক</option>
+                                    <option value="agricultural">কৃষি</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="road" class="form-label">পাশের রাস্তার পরিমাপ</label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="road" name="road" placeholder="পরিমাপ লিখুন">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="bayna" class="form-label">বায়না</label>
+                                <input type="text" class="form-control" id="bayna" name="bayna" placeholder="বায়নার তথ্য লিখুন">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="image" class="form-label">ছবি আপলোড করুন</label>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">জমা দিন</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- END Modal -->
     <!-- START SECTION INFO-HELP -->
     <section class="info-help">
         <div class="container">
@@ -465,5 +573,9 @@
         </div>
     </section> --}}
     <!-- END SECTION TOP LOCATION -->
+
+<!-- Bootstrap and JavaScript for Modal -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 @endsection

@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="netabout">
-                        {{-- @foreach($abouts as $about)
+                        @foreach($abouts as $about)
                         <a href="/" class="logo">
                             <img src="{{ asset('/') }}frontend/assets/images/logo-footer.svg" alt="netcom">
                         </a>
                         <p>{{ $about->description }}</p>
                     </div>
-                    @endforeach --}}
+                    @endforeach
                     <div class="contactus">
                         {{-- @foreach($settings as $setting) --}}
                         <ul>
