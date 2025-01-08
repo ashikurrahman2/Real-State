@@ -1,52 +1,78 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{asset('/')}}frontend/assets/css/custom-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <!-- <img src="./logo.png" alt="Hash Techie Logo" class="logo" /> -->
+        <h2 class="logo"><i class="bx bxl-xing"></i> Hash Tag</h2>
+        <div class="text-left-side">
+          <h2>Join Us! <br><span>Create Your Account</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, repellendus?</p>
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div class="social-icons">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-gmail"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
         </div>
+      </div>
+      <div class="right-side">
+        <form method="POST" action="{{ route('register') }}">
+          @csrf
+          <h1>Register</h1>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+          <div class="input-box">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              required
+              value="{{ old('name') }}"
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              value="{{ old('email') }}"
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              name="password_confirmation"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+          <button type="submit" class="btn">Register</button>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+          <div class="register-link">
+            <p>Already have an account? <a href="{{ route('login') }}">Login here!</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
