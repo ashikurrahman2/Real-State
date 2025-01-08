@@ -2809,6 +2809,38 @@ namespace App\Models {
     /**
      * App\Models\Sell
      *
+     * @property \Illuminate\Support\Carbon $updated_at
+     * @property \Illuminate\Support\Carbon $created_at
+     * @property string|null $discount_code
+     * @property string|null $price
+     * @property int|null $qnty
+     * @property string|null $image
+     * @property string|null $bayna
+     * @property string|null $road
+     * @property string|null $category
+     * @property string|null $morrja
+     * @property string|null $bds
+     * @property string|null $zilla
+     * @property string|null $address
+     * @property string|null $description
+     * @property string|null $title
+     * @property int $id
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereTitle($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereDescription($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereAddress($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereZilla($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereBds($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereMorrja($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereCategory($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereRoad($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereBayna($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereImage($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereQnty($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell wherePrice($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereDiscountCode($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Sell whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Sell newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|Sell newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|Sell query()

@@ -17,9 +17,11 @@ class Sell extends Model
         'title',
         'description',
         'address',
+        'price',
         'zilla',
         'bds',
         'morrja',
+        'qnty',
         'category',
         'road',
         'bayna',
@@ -65,9 +67,11 @@ class Sell extends Model
         $sell->address = $request->address;
         $sell->zilla = $request->zilla;
         $sell->bds = $request->bds;
+        $sell->qnty = $request->qnty;
         $sell->morrja = $request->morrja;
         $sell->category = $request->category;
         $sell->road = $request->road;
+        $sell->price = $request->price;
         $sell->bayna = $request->bayna;
         $sell->image = $imageUrl;
 

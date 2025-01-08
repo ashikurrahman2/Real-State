@@ -11,7 +11,7 @@
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-fb7756"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/1.png" width="50" alt=""></div>
                             @if(auth()->check())
-                            <a href="{{ route('Pcart') }}">
+                            <a href="{{ route('cart.view') }}">
                             <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি কিনুন</h3>
                             </a>
                             @else
@@ -151,7 +151,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="propertyModalLabel">বিক্রয় ফর্ম</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="বন্ধ করুন"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
             <div class="modal-body">
                 <form id="propertyForm" action="{{ route('sell') }}" method="POST" enctype="multipart/form-data">
@@ -165,6 +165,11 @@
                     <div class="mb-3">
                         <label for="description" class="form-label">বিবরণ</label>
                         <textarea class="form-control" id="description" name="description" rows="3" placeholder="বিবরণ লিখুন" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="qnty" class="form-label">পরিমাণ</label>
+                        <input type="number" class="form-control" id="qnty" name="qnty" placeholder="পরিমাণ লিখুন" required>
                     </div>
 
                     <!-- দুই-কলামের লেআউট -->
@@ -216,6 +221,13 @@
                             <div class="mb-3">
                                 <label for="bayna" class="form-label">বায়না</label>
                                 <input type="text" class="form-control" id="bayna" name="bayna" placeholder="বায়নার তথ্য লিখুন">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="price" class="form-label">টাকার পরিমাণ</label>
+                                <input type="text" class="form-control" id="price" name="price" placeholder="টাকার পরিমাণ লিখুন">
                             </div>
                         </div>
                         <div class="col-md-6">

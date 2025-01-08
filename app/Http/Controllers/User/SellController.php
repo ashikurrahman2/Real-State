@@ -37,38 +37,49 @@ public function store(Request $request)
             'category' => 'required|string',
             'road' => 'nullable|string|max:100',
             'bayna' => 'nullable|string|max:100',
+            'qnty' => 'nullable|integer|max:100',
+            'price' => 'nullable|string|max:100',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         // dd($request->all()); 
         Sell::newSell($request);
         $this->toastr->success('Sell form submitted successfully!!');
-        return back();
+        // return back();
+        return redirect()->route('cart.view');
     }
 
-    public function Cart()
-    {   
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'address' => 'required|string|max:255',
-            'zilla' => 'required|string|max:100',
-            'bds' => 'nullable|string|max:100',
-            'morrja' => 'nullable|string|max:100',
-            'category' => 'required|string',
-            'road' => 'nullable|string|max:100',
-            'bayna' => 'nullable|string|max:100',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-        Sell::newSell($request);
-        $this->toastr->success('Cart info form submitted successfully!!');
-        return back();
-    }
+    // public function Cart()
+    // {   
+    //     $request->validate([
+    //         'title' => 'required|string|max:255',
+    //         'description' => 'required|string',
+    //         'address' => 'required|string|max:255',
+    //         'zilla' => 'required|string|max:100',
+    //         'bds' => 'nullable|string|max:100',
+    //         'morrja' => 'nullable|string|max:100',
+    //         'category' => 'required|string',
+    //         'road' => 'nullable|string|max:100',
+    //         'bayna' => 'nullable|string|max:100',
+    //         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+    //     ]);
+    //     Sell::newSell($request);
+    //     $this->toastr->success('Cart info form submitted successfully!!');
+    //     return redirect()->route('cart.view');
+    // }
 
     
-    public function CartView(){
+    // public function CartView(){
 
-        $sells=Sell::all();
-        $abouts=About::all();
-        return view('frontend.pages.cart_view', compact('sells','abouts'));
-    }
+    //     $sells=Sell::all();
+    //     $abouts=About::all();
+    //     return view('frontend.pages.cart_view', compact('sells','abouts'));
+    // }
+
+    public function CartView()
+{
+    $sells = Sell::all();
+    $abouts = About::all();
+    return view('frontend.pages.cart_view', compact('sells', 'abouts'));
+}
+
 }
