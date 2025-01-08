@@ -10,8 +10,16 @@
                     <div _ngcontent-bgi-c3="" class="col-xl-4 col-sm-6 col-lg-6 p-0" data-aos="fade-up" data-aos-delay="150">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
                             <div _ngcontent-bgi-c3="" class="icon color-fb7756"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/1.png" width="50" alt=""></div>
+                            @if(auth()->check())
+                            <a href="{{ route('Pcart') }}">
                             <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি কিনুন</h3>
-                            <p _ngcontent-bgi-c3="">সম্পত্তি কেনা একটি মূল্যবান বিনিয়োগ, যা দীর্ঘমেয়াদে নিরাপত্তা এবং আর্থিক বৃদ্ধি প্রদান করতে পারে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html">আরও পড়ুন</a></div>
+                            </a>
+                            @else
+                            <a href="{{ route('login') }}" class="link-class">
+                                <h3 class="mt-0">সম্পত্তি কিনুন</h3>
+                            </a>
+                            @endif
+                            <p _ngcontent-bgi-c3="">সম্পত্তি কেনা একটি মূল্যবান বিনিয়োগ, যা দীর্ঘমেয়াদে নিরাপত্তা এবং আর্থিক বৃদ্ধি প্রদান করতে পারে।</p><a _ngcontent-bgi-c3="" class="read-more-btn" href="single-property-1.html"></a></div>
                     </div>
                     <div _ngcontent-bgi-c3="" class="col-xl-4 col-sm-6 col-lg-6  p-0" data-aos="fade-up" data-aos-delay="250">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
