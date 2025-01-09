@@ -20,8 +20,7 @@ Route::get('/job-form', [FrontendController:: class, 'JobApplication'])->name('j
 Route::get('/rent-property', [FrontendController:: class, 'Rent'])->name('rentproperty');
 Route::post('/sell', [SellController::class, 'store'])->middleware('auth')->name('sell');
 Route::get('/sell', [SellController::class, 'store'])->middleware('auth')->name('sell');
-Route::get('/cart', [SellController::class, 'Cart'])->middleware('auth')->name('Pcart');
-// Route::get('/cart-view', [SellController::class, 'CartView'])->middleware('auth')->name('Pcartview');
+// Route::get('/cart', [SellController::class, 'Cart'])->middleware('auth')->name('Pcart');
 Route::get('/cart-view', [SellController::class, 'CartView'])->name('cart.view');
 Route::post('/cart/apply-discount', [SellController::class, 'applyDiscount'])->name('cart.applyDiscount');
 

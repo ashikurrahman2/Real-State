@@ -1,94 +1,84 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container my-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="fw-bold mb-4">কার্ট ভিউ</h1>
-            <p class="text-muted">আপনার জমা দেওয়া সকল তথ্য এখানে দেখা যাবে।</p>
+
+<section class="featured portfolio bg-white-1 rec-pro">
+    <div class="container-fluid">
+        <div class="sec-title">
+            <h2><span>আমাদের সম্পত্তি </span>সমূহ</h2>
+            <p>আমরা প্রতিটি পদক্ষেপে সম্পূর্ণ পরিষেবা প্রদান করি।</p>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-hover table-striped align-middle text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>শিরোনাম</th>
-                            <th>বিবরণ</th>
-                            <th>পরিমাণ</th>
-                            <th>ঠিকানা</th>
-                            <th>জেলা</th>
-                            <th>ছবি</th>
-                            <th>একক মূল্য (৳)</th>
-                            <th>মোট (৳)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php $subtotal = 0; @endphp
-                        @foreach($sells as $sell)
-                            @php
-                                $item_total = $sell->qnty * $sell->price; // প্রতিটি আইটেমের মোট মূল্য
-                                $subtotal += $item_total; // সাবটোটাল আপডেট
-                            @endphp
-                            <tr>
-                                <td class="fw-bold">{{ $sell->title }}</td>
-                                <td>{{ \Illuminate\Support\Str::limit($sell->description, 50) }}</td>
-                                <td>{{ $sell->qnty }}</td>
-                                <td>{{ $sell->address }}</td>
-                                <td>{{ $sell->zilla }}</td>
-                                <td>
-                                    @if($sell->image)
-                                        <img src="{{ asset($sell->image) }}" alt="image" class="img-thumbnail" style="width: 100px; height: auto;">
-                                    @else
-                                        <span class="text-danger">ছবি নেই</span>
-                                    @endif
-                                </td>
-                                <td>৳ {{ number_format($sell->price, 2) }}</td>
-                                <td>৳ {{ number_format($item_total, 2) }}</td>
-                            </tr>
+        <div class="portfolio col-xl-12">
+            <div class="slick-lancers">
+                <div class="agents-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="landscapes">
+                        <div class="project-single">
+                            @foreach ($sells as $property)
+                            <div class="project-inner project-head">
+                                <div class="homes">
+                                    <!-- homes img -->
+                                    <a href="{{ route('property') }}" class="homes-img">
+                                        <div class="homes-tag button alt featured">Featured</div>
+                                        <div class="homes-tag button alt sale">{{ $property->property_action }}</div>
+                                        <img src="{{asset($property->image)}}" alt="home-1" class="img-responsive">
+                                        {{-- <img src="{{asset('/')}}frontend/assets/images/blog/b-11.jpg" alt="home-1" class="img-responsive"> --}}
+                                    </a>
+                                </div>
+                                <div class="button-effect">
+                                    <a href="single-property-1.html" class="btn"><i class="fa fa-link"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=14semTlwyUY" class="btn popup-video popup-youtube"><i class="fas fa-video"></i></a>
+                                    <a href="single-property-2.html" class="img-poppu btn"><i class="fa fa-photo"></i></a>
+                                </div>
+                            </div>
+                            <!-- homes content -->
+                            <div class="homes-content">
+                                <!-- homes address -->
+                                <h3><a href="{{ route('property') }}">{{ $property->title }}</a></h3>
+                                <p class="homes-address mb-3">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker"></i><span>{{ $property->address }}</span>
+                                    </a>
+                                </p>
+                                <!-- homes List -->
+                                <ul class="homes-list clearfix">
+                                    <li>
+                                        {{-- <i class="fa fa-land" aria-hidden="true"></i> --}}
+                                        <i class="fa fa-map" aria-hidden="true"></i>
+                                        <span>{{ $property->category }} ক্যাটাগরি</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-road" aria-hidden="true"></i>
+                                        <span>{{ $property->road }} রোড</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-cogs" aria-hidden="true"></i>
+        
+                                        <span>{{ $property->bds }} বিডিএস / আরএসসিএস</span>
+                                    </li>
+                                </ul>
+                                <div class="price-properties footer pt-3 pb-0">
+                                    <h3 class="title mt-3">
+                                        <a href="#">৳ {{ $property->price }}</a>
+                                    </h3>
+                                    <div class="compare">
+                                        {{-- <a href="#" title="Compare">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </a>
+                                        <a href="#" title="Share">
+                                            <i class="fas fa-share-alt"></i>
+                                        </a>
+                                        <a href="#" title="Favorites">
+                                            <i class="fa fa-heart-o"></i>
+                                        </a> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Subtotal, Discount, and Checkout Section -->
-    <div class="row mt-4">
-        <div class="col-md-6 offset-md-6">
-            <div class="bg-light p-3 border rounded">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="fw-bold mb-0">সাবটোটাল:</h5>
-                    <h5 class="fw-bold text-success mb-0">৳ {{ number_format($subtotal, 2) }}</h5>
+                    </div>
                 </div>
-
-                <!-- Discount Section -->
-                <form method="POST" action="{{ route('cart.applyDiscount') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="discount_code" class="form-label">ডিস্কাউন্ট কোড:</label>
-                        <input type="text" id="discount_code" name="discount_code" class="form-control" placeholder="আপনার ডিস্কাউন্ট কোড লিখুন">
-                    </div>
-                    <button type="submit" class="btn btn-secondary w-100">ডিস্কাউন্ট প্রয়োগ করুন</button>
-                </form>
-
-                <!-- Show Discounted Total -->
-                @if(session('discount'))
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <h5 class="fw-bold mb-0">ডিস্কাউন্ট:</h5>
-                        <h5 class="fw-bold text-danger mb-0">৳ {{ number_format(session('discount'), 2) }}</h5>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <h5 class="fw-bold mb-0">মোট:</h5>
-                        <h5 class="fw-bold text-primary mb-0">৳ {{ number_format($subtotal - session('discount'), 2) }}</h5>
-                    </div>
-                @endif
             </div>
-            <button class="btn btn-primary btn-lg w-100 mt-3 fw-bold">
-                <i class="bi bi-cart-check"></i> চেকআউট করুন
-            </button>
         </div>
     </div>
-</div>
+</section>
 @endsection

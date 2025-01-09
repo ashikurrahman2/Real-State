@@ -113,8 +113,8 @@
 
 
             <div class="col-md-12">
-              <label for="	rentproperty_image" class="col-form-label pt-0">Rentproperty Image<sup class="text-size-20 top-1">*</sup></label>
-              <input type="file" class="dropify" data-height="200" name="	rentproperty_image"  required />
+              <label for="rentproperty_image" class="col-form-label pt-0">Rentproperty Image<sup class="text-size-20 top-1">*</sup></label>
+              <input type="file" class="dropify" data-height="200" name="rentproperty_image"  required />
               <small id="imageHelp" class="form-text text-muted">This is your Property image</small>
           </div>
 
@@ -155,7 +155,7 @@
               <small id="emailHelp" class="form-text text-muted">This is your property</small>
           </div>
           <div class="form-group">
-            <label for="garages" class="col-form-label pt-0"> Garages<sup class="text-size-20 top-1">*</sup></label>
+            <label for="garages" class="col-form-label pt-0">Garages<sup class="text-size-20 top-1">*</sup></label>
               <input type="text" class="form-control" id="garages" name="garages" required>
               <small id="emailHelp" class="form-text text-muted">This is your property</small>
           </div>

@@ -9,13 +9,14 @@
                 <div _ngcontent-bgi-c3="" class="row m-0">
                     <div _ngcontent-bgi-c3="" class="col-xl-4 col-sm-6 col-lg-6 p-0" data-aos="fade-up" data-aos-delay="150">
                         <div _ngcontent-bgi-c3="" class="single-featured-box">
-                            <div _ngcontent-bgi-c3="" class="icon color-fb7756"><img src="{{asset('/')}}frontend/assets/css/colors/icons/green/1.png" width="50" alt=""></div>
+                            <div _ngcontent-bgi-c3="" class="icon color-fb7756">
+                                <img src="{{asset('/')}}frontend/assets/css/colors/icons/green/1.png" width="50" alt=""></div>
                             @if(auth()->check())
                             <a href="{{ route('cart.view') }}">
                             <h3 class="mt-0" _ngcontent-bgi-c3="">সম্পত্তি কিনুন</h3>
                             </a>
                             @else
-                            <a href="{{ route('login') }}" class="link-class">
+                         <a href="{{ route('login') }}" class="link-class">
                                 <h3 class="mt-0">সম্পত্তি কিনুন</h3>
                             </a>
                             @endif

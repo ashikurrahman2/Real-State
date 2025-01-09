@@ -57,7 +57,8 @@ class FrontendController extends Controller
 
     public function partnerDetails(){
         $partners=Partner::all();
-        return view('frontend.pages.partner_collabration', compact('partners'));
+        $abouts = About::get();
+        return view('frontend.pages.partner_collabration', compact('partners', 'abouts'));
     }
 
     public function Career(){

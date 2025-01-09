@@ -17,12 +17,6 @@ class PropertyController extends Controller
         $this->toastr = $toastr;
     }
     
-    // protected $toastr;
-    // public function __construct(ToastrInterface $toastr)
-    // {
-    //     // $this->middleware('auth');
-    //     $this->toastr = $toastr;
-    // }
     /**
      * Display a listing of the resource.
      */

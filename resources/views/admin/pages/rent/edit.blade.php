@@ -23,22 +23,22 @@
       <div class="form-group">
         <label for="rent_image" class="col-form-label pt-0">Current Rent Image</label>
         <br>
-        @if($rent->rent_image)
-        <img src="{{ asset($rent->rent_image) }}" alt="rent image" class="img-fluid" style="max-width: 100px;">
+        @if($rent->rentproperty_image)
+        <img src="{{ asset($rent->rentproperty_image) }}" alt="rent image" class="img-fluid" style="max-width: 100px;">
         @else
         <p>No logo uploaded.</p>
         @endif
     </div>
 
     <div class="col-md-12">
-      <label for="rent_image" class="col-form-label pt-0">Rentproperty Image<sup class="text-size-20 top-1">*</sup></label>
-      <input type="file" class="dropify" data-height="200" name="rent_image" />
+      <label for="rentproperty_image" class="col-form-label pt-0">Rentproperty Image<sup class="text-size-20 top-1">*</sup></label>
+      <input type="file" class="dropify" data-height="200" name="rentproperty_image" />
       <small id="imageHelp" class="form-text text-muted">Current Image: <img src="{{ asset($rent->rent_image) }}" class="img-fluid" style="max-width: 100px;"></small>
   </div>
 
         <div class="form-group">
           <label for="rentproperty_status" class="col-form-label pt-0">Rentproperty Status<sup class="text-size-20 top-1">*</sup></label>
-            <input type="text" class="form-control" id="rentproperty_status" name="rentproperty_status" {{ $rent->rentproperty_status }} required>
+            <input type="text" class="form-control" id="rentproperty_status" name="rentproperty_status" value= "{{ $rent->rentproperty_status }}" required>
             <small id="emailHelp" class="form-text text-muted">This is your rent</small>
         </div>
 
