@@ -13,6 +13,19 @@
             <small id="emailHelp" class="form-text text-muted">This is your rent</small>
         </div>
 
+        
+        <div class="form-group">
+          <label for="rent_title" class="col-form-label pt-0">Rentproperty Title<sup class="text-size-20 top-1">*</sup></label>
+            <input type="text" class="form-control" id="rent_title" name="rent_title" value="{{ $rent->rent_title }}" required>
+            <small id="emailHelp" class="form-text text-muted">This is your property</small>
+        </div>
+
+        <div class="form-group">
+          <label for="rent_sqrt" class="col-form-label pt-0">Rentproperty Sqrt<sup class="text-size-20 top-1">*</sup></label>
+            <input type="text" class="form-control" id="rent_sqrt" name="rent_sqrt" value="{{ $rent->rent_sqrt }}" required>
+            <small id="emailHelp" class="form-text text-muted">This is your property</small>
+        </div>
+
         <div class="col-md-12">
           <div class="mb-3">
               <label class="form-label">Rentproperty Description</label>

@@ -77,4 +77,11 @@ class FrontendController extends Controller
         return view('frontend.pages.rent_property', compact('abouts'));
     }
 
+    public function rentDetails($id)
+    {
+        $rent = Rent::findOrFail($id); 
+        $abouts = About::all();
+        return view('frontend.pages.rent_details', compact('rent', 'abouts'));
+    }
+
 }

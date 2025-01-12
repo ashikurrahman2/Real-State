@@ -269,38 +269,46 @@
     <!-- END SECTION INFO-HELP -->
 
     <!-- START SECTION PROPERTIES FOR RENT -->
-    <section class="recently portfolio bg-white-1 rec-pro ho-17">
-        <div class="container-fluid">
-            <div class="sec-title">
-                <h2><span>সম্পত্তি ভাড়ার </span>জন্য</h2>
-                <p>আমরা প্রতিটি পদক্ষেপে সম্পূর্ণ পরিষেবা প্রদান করি।</p>
-            </div>
-            <div class="row portfolio-items">
-                <div class="item col-lg-4 col-md-6 col-xs-12 landscapes sale" data-aos="zoom-in" data-aos-delay="150">
-                    @foreach ($rents as $rent)
+<!-- START SECTION PROPERTIES FOR RENT -->
+<section class="recently portfolio bg-white-1 rec-pro ho-17">
+    <div class="container-fluid">
+        <div class="sec-title">
+            <h2><span>সম্পত্তি ভাড়ার </span>জন্য</h2>
+            <p>আমরা প্রতিটি পদক্ষেপে সম্পূর্ণ পরিষেবা প্রদান করি।</p>
+        </div>
+        <div class="row">
+            @foreach ($rents as $rent)
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="landscapes listing-item compact thehp-2">
-                        <a href="single-property-1.html" class="recent-16" data-aos="fade-up">
-                            <div class="recent-img16 img-fluid img-center" style="background-image: url({{asset('/')}}frontend/assets/images/interior/p-1.jpg);"></div>
-                            {{-- <div class="recent-img16 img-fluid img-center" style="background-image: url({{asset($rent->)}});"></div> --}}
+                        <a href="{{ route('rent.details', $rent->id) }}" class="recent-16" data-aos="fade-up">
+                            <div class="recent-img16 img-fluid img-center" 
+                            style="background-image: url({{ asset($rent->rentproperty_image) ?? asset('/') . 'frontend/assets/images/interior/p-1.jpg' }});"></div>
                             <div class="recent-content"></div>
                             <div class="listing-badges">
                                 <span>For Rent</span>
                             </div>
                             <div class="recent-details">
-                                <div class="recent-title">hjh</div>
+                                <div class="recent-title">{{ $rent->rent_title }}</div>
                                 <div class="price-details">
-                                <div class="recent-price mb-3">৳{{ $rent->rentproperty_price }}</div>
-                                <div class="house-details thehp-1"><i class="fa fa-bed mr-1" aria-hidden="true"></i> {{ $rent->bed_rooms }} Bed <span>|</span><i class="fa fa-bath mr-1" aria-hidden="true"></i> {{ $rent->bath_rooms }} Bath <span>|</span><i class="fa fa-object-group mr-1" aria-hidden="true"></i> 720 sq ft</div>
+                                    <div class="recent-price mb-3">৳{{ $rent->rentproperty_price }}</div>
+                                    <div class="house-details thehp-1">
+                                        <i class="fa fa-bed mr-1" aria-hidden="true"></i> {{ $rent->bed_rooms }} Bed 
+                                        <span>|</span>
+                                        <i class="fa fa-bath mr-1" aria-hidden="true"></i> {{ $rent->bath_rooms }} Bath 
+                                        <span>|</span>
+                                        <i class="fa fa-object-group mr-1" aria-hidden="true"></i> {{ $rent->rent_sqrt ?? '720' }} sq ft
+                                    </div>
                                 </div>
                             </div>
                             <div class="view-proper">View Details</div>
                         </a>
                     </div>
                 </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- END SECTION PROPERTIES FOR RENT -->
 
     <!-- START SECTION BLOG -->

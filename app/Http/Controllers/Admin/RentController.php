@@ -70,6 +70,8 @@ class RentController extends Controller
 
             'rentproperty_id' => 'required|string|max:500',
             'rentproperty_type' => 'required|string|max:500',
+            'rent_sqrt' => 'required|string|max:500',
+            'rent_title' => 'required|string|max:500',
             'rent_description' => 'required|string|max:500',
             'rentproperty_status' => 'required|string|max:500',
             'rent_rooms' => 'required|numeric|max:500',
@@ -116,6 +118,8 @@ class RentController extends Controller
         $validated = $request->validate([
             'rentproperty_id' => 'required|string|max:500',
             'rentproperty_type' => 'required|string|max:500',
+            'rent_sqrt' => 'required|string|max:500',
+            'rent_title' => 'required|string|max:500',
             'rent_description' => 'required|string|max:500',
             'rentproperty_status' => 'required|string|max:500',
             'rent_rooms' => 'required|numeric|max:500',
@@ -148,6 +152,8 @@ class RentController extends Controller
         $rent->update([
             'rentproperty_id' => $validated['rentproperty_id'],
             'rentproperty_type' => $validated['rentproperty_type'],
+            'rent_title' => $validated['rent_title'],
+            'rent_sqrt' => $validated['rent_sqrt'],
             'rent_description' => $validated['rent_description'],
             'rentproperty_status' => $validated['rentproperty_status'],
             'rent_rooms' => $validated['rent_rooms'],

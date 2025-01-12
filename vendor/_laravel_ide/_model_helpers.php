@@ -2556,12 +2556,16 @@ namespace App\Models {
      * @property string|null $rentproperty_status
      * @property string|null $rentproperty_image
      * @property string|null $rent_description
+     * @property string|null $rent_title
+     * @property string|null $rent_sqrt
      * @property string|null $rentproperty_type
      * @property string $rentproperty_id
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder|Rent whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentpropertyId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentpropertyType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentSqrt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentTitle($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentDescription($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentpropertyImage($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Rent whereRentpropertyStatus($value)

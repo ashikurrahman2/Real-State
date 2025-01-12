@@ -17,6 +17,8 @@ class Rent extends Model
     protected $fillable = [
         'rentproperty_id',
         'rentproperty_type',
+        'rent_sqrt',
+        'rent_title',
         'rent_description',
         'rentproperty_status',
         'rent_rooms',
@@ -82,6 +84,8 @@ private static function getImageUrl($request)
        $rent->rentproperty_image           = $imageUrl;
        $rent->rentproperty_id           = $request->rentproperty_id;
        $rent->rentproperty_type      = $request->rentproperty_type;
+       $rent->rent_title      = $request->rent_title;
+       $rent->rent_sqrt      = $request->rent_sqrt;
        $rent->rent_description            = $request->rent_description;
        $rent->rentproperty_status       = $request->rentproperty_status;
        $rent->rent_rooms           = $request->rent_rooms;

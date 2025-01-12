@@ -22,6 +22,7 @@ Route::post('/sell', [SellController::class, 'store'])->middleware('auth')->name
 Route::get('/sell', [SellController::class, 'store'])->middleware('auth')->name('sell');
 // Route::get('/cart', [SellController::class, 'Cart'])->middleware('auth')->name('Pcart');
 Route::get('/cart-view', [SellController::class, 'CartView'])->name('cart.view');
+Route::get('/rent-details/{id}', [FrontendController::class, 'rentDetails'])->name('rent.details');
 Route::post('/cart/apply-discount', [SellController::class, 'applyDiscount'])->name('cart.applyDiscount');
 
 Route::get('/dashboard', function () {
